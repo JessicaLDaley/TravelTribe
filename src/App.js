@@ -18,8 +18,8 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <CSSReset/>
-      <Heading>
-        <h1>Travel-App</h1>
+      <Heading as="h1">
+        Travel-App
       </Heading>
       <Box textAlign="center" fontSize="xl">
         <Grid minH="100vh" p={3}>
