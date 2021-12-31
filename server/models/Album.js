@@ -3,6 +3,10 @@ const dateFormat = require('../utils/dateFormat')
 
 const albumSchema = new Schema (
   {
+    pictureId: {
+      type: String,
+      required: true
+    },
     tripName: {
       type: String,
       required: true
@@ -20,7 +24,8 @@ const albumSchema = new Schema (
   {
     toJSON: {
       getters: true
-    }
+    },
+    id: false
   }
 )
 

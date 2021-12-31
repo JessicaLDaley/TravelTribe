@@ -55,8 +55,12 @@ userSchema.methods.isCorrectPassword = async function(password) {
   return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual('friendCount').get(function() {
-  return this.friends.length;
+userSchema.virtual('tripCount').get(function() {
+  return this.trips.length;
+});
+
+userSchema.virtual('companionCount').get(function() {
+  return this.companions.length;
 });
 
 const User = model('User', userSchema);
