@@ -17,40 +17,15 @@ export default function CallToActionWithAnnotation() {
       <Container maxW={'3xl'} minH="90vh" display="flex" alignItems="center" justifyContent="center">
         <Stack as={Box} textAlign={'center'} spacing={{ base: 8, md: 14 }} py={{ base: 20, md: 36 }}>
           <Heading fontWeight={600} fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }} lineHeight={'110%'}>
-            MERN stack blog app with <br />
-            <Text as={'span'} color={'green.400'} bgGradient="linear(to-r, #30CFD0 0%, #ce47e7 100%)" bgClip="text">
-              Chakra UI
+          <Text as={'span'} color={'06093d'} bgGradient="linear(to-r, #30CFD0 0%, #ce47e7 100%)" bgClip="text">
+              TripTribe
             </Text>
           </Heading>
-          <Text color={'gray.500'}>
-            That's my first experience with MERN stack and Chakra UI. I had so much fun doing it. <br /> I hope you like
-            it too.
-          </Text>
+          
           <Stack direction={'column'} spacing={3} align={'center'} alignSelf={'center'} position={'relative'}>
-            <Button
-              as={Link}
-              href={'/posts'}
-              colorScheme={'green'}
-              bg={'green.500'}
-              rounded={'full'}
-              px={6}
-              _hover={{
-                bg: 'green.600',
-              }}
-              color={'gray.100'}
-            >
-              Get Started
-            </Button>
-
+            
             <Box>
-              <Icon
-                as={Arrow}
-                color={useColorModeValue('gray.800', 'gray.300')}
-                w={71}
-                position={'absolute'}
-                right={-71}
-                top={'10px'}
-              />
+              
               <Text
                 fontSize={'lg'}
                 fontFamily={'Caveat'}
@@ -59,7 +34,6 @@ export default function CallToActionWithAnnotation() {
                 top={'-18px'}
                 transform={'rotate(10deg)'}
               >
-                Let's go!
               </Text>
             </Box>
           </Stack>
