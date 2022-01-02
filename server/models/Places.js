@@ -17,6 +17,6 @@ const placesSchema = new Schema (
   }
 )
 
-const Place = model('Place', placesSchema)
+const Places = model('Place', placesSchema)
 
-module.exports = Place
+module.exports = Places

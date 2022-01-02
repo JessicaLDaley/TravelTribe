@@ -37,8 +37,14 @@ const tripSchema = new Schema(
       type: Date,
       get: timestamp => dateFormat(timestamp)
     },
-    placesToSee: [placesSchema],
-    pictureAlbum: [albumSchema]
+    placesToSee: {
+      type: Schema.Types.ObjectId,
+      ref: 'Places'  
+    },
+    pictureAlbum: {
+      type: Schema.Types.ObjectId,
+      ref: 'Album'  
+    }
   },
   {
     toJSON: {
