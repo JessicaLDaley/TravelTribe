@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
 
 import Logo from "./Logo";
-
+// Hamburger menue navbar 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -83,7 +83,7 @@ const MenuLinks = ({ isOpen }) => {
             color={["primary.500", "primary.500", "white", "white"]}
             bg={["white", "white", "primary.500", "primary.500"]}
             _hover={{
-              bg: ["primary.100", "primary.100", "primary.600", "primary.600"]
+              bg: ["primary.100", "primary.100", "primary.400", "primary.400"]
             }}
           >Create Account
           </Button>
@@ -103,8 +103,8 @@ const NavBarContainer = ({ children, ...props }) => {
       w="100%"
       mb={8}
       p={8}
-      bg={["primary.500", "primary.500", "transparent", "transparent"]}
-      color={["white", "white", "primary.700", "primary.700"]}
+      bg={["primary.400", "primary.400", "transparent", "transparent"]}
+      color={["primary.100", "primary.100", "primary.500", "primary.500"]}
       {...props}
     >
       {children}
