@@ -12,7 +12,7 @@ const NavBar = (props) => {
     <NavBarContainer {...props}>
       <Logo
         w="100px"
-        color={["white", "white", "primary.500", "primary.500"]}
+        color={["white", "gray", "primary.500", "primary.500"]}
       />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} />
@@ -74,10 +74,9 @@ const MenuLinks = ({ isOpen }) => {
         pt={[4, 4, 0, 0]}
       >
         <MenuItem to="/">Home</MenuItem>
-        <MenuItem to="/how">How It works </MenuItem>
-        <MenuItem to="/faetures">Features </MenuItem>
-        <MenuItem to="/pricing">Pricing </MenuItem>
-        <MenuItem to="/signup" isLast>
+       <MenuItem to="/Login">Login </MenuItem>
+        <MenuItem to="/Dashboard">Dashboard </MenuItem>
+        <MenuItem to="/Signup" isLast>
           <Button
             size="sm"
             rounded="md"
@@ -86,8 +85,7 @@ const MenuLinks = ({ isOpen }) => {
             _hover={{
               bg: ["primary.100", "primary.100", "primary.600", "primary.600"]
             }}
-          >
-            Create Account
+          >Create Account
           </Button>
         </MenuItem>
       </Stack>

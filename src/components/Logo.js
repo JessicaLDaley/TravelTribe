@@ -8,7 +8,7 @@ function Logo(props) {
       
     <Box {...props}>
       
-     <Image boxSize='100px'src={logoTrip} className='logo'alt='logo' />
+     <Image boxSize='100px'objectFit='contain'src={logoTrip} className='logo'alt='logo' />
      
 </Box>
    
