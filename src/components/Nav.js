@@ -2,6 +2,8 @@ import React from "react";
 import Auth from "../utils/auth.js";
 import { Link } from "react-router-dom";
 
+
+
 function Nav() {
   function showNav() {
     if (Auth.loggedIn()) {
