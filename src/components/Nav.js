@@ -32,8 +32,7 @@ function Nav() {
     <header>
       <h1>
         <Link to={"/"}>
-          <span role="img">✈️</span>
-          Travel App
+         TripTribe
         </Link>
       </h1>
 
