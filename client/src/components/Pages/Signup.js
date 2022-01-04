@@ -7,23 +7,43 @@ import { useMutation } from "@apollo/client";
 function Signup() {
   document.title = 'Signup';
 
-  const [formState, setFormState] = useState({ userName: '', email: '', password: '' });
+  const [formState, setFormState] = useState({ username: '', email: '', password: '' });
   const [addUser, { error }] = useMutation(ADD_USER);
 
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const { data } = await addUser({
+        variables: { ...formState }
+      });
+      console.log(error);
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value
+    });
+  };
 
   return (
     <Flex height="100vh" alignItems="center" justifyContent="center" textAlign="center">
       <Flex direction="column" border="outset" background="primary.500" p={12} rounded={6}>
         <Heading mb={6} color="white">Signup</Heading>
-        <Input placeholder="Username" variant="filled" color="primary.400"mb={3} type="text"/>
-        <Input placeholder="email@example.com" variant="filled" color="primary.400"mb={3} type="email"/>
-        <Input placeholder="password" variant="filled" color="primary.400" mb={6} type="password"/>
+        <Input placeholder="username" variant="filled" color="primary.400"mb={3} type="text" name="username" onChange={handleChange}/>
+        <Input placeholder="email@example.com" variant="filled" color="primary.400"mb={3} type="email" name="email" onChange={handleChange}/>
+        <Input placeholder="password" variant="filled" color="primary.400" mb={6} type="password" name="password" onChange={handleChange}/>
         <Button color={["primary.500", "primary.500", "white", "white"]}
             bg={["white", "white", "primary.300", "primary.300"]}
             _hover={{
               bg: ["primary.100", "primary.100", "primary.400", "primary.400"]
-            }}>Signup</Button>
+            }}
+            onClick={handleFormSubmit}>Signup</Button>
       </Flex>
     </Flex>
   );
