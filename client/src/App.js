@@ -7,18 +7,31 @@ import Dashboard from "./components/Pages/Dashboard";
 import Landing from "./components/Pages/Landing";
 import Home from "./components/Pages/Home";
 
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const client = new ApolloClient({
+  // link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
-    <Router>
-      <Header/>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/signup" component={Signup}/>
-        <Route exact path="/login" component={Login}/>
-        <Route exact path="/dashboard" component={Dashboard}/>
-        <Landing/>
-      </Switch>
-  </Router>
+    <ApolloProvider client={client}>
+      <Router>
+        <Header/>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/signup" component={Signup}/>
+          <Route exact path="/login" component={Login}/>
+          <Route exact path="/dashboard" component={Dashboard}/>
+          <Landing/>
+        </Switch>
+      </Router>
+    </ApolloProvider>
 );
 }
 
