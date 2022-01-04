@@ -56,7 +56,7 @@ const resolvers = {
       }
 
       const token = signToken(user)
-      return { user }
+      return { token, user }
     },
     addTrip: async (parent, args, context) => {
       if (context.user) {
