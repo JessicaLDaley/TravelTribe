@@ -7,20 +7,17 @@ import Dashboard from "./components/Pages/Dashboard";
 import Landing from "./components/Pages/Landing";
 import Home from "./components/Pages/Home";
 
-
 function App() {
   return (
     <Router>
-    <div>
-      <Header />
+      <Header/>
       <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/signup" component={Signup} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/dashboard" component={Dashboard} />
-      <Landing/>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/signup" component={Signup}/>
+        <Route exact path="/login" component={Login}/>
+        <Route exact path="/dashboard" component={Dashboard}/>
+        <Landing/>
       </Switch>
-    </div>
   </Router>
 );
 }

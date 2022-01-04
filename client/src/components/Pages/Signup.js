@@ -3,6 +3,7 @@ import Auth from "../../utils/auth";
 import {Button, Flex, Heading, Input} from '@chakra-ui/react';
 
 function Signup() {
+  document.title = 'Signup';
   return (
     <Flex height="100vh" alignItems="center" justifyContent="center" textAlign="center">
       <Flex direction="column" border="outset" background="primary.500" p={12} rounded={6}>

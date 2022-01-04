@@ -4,7 +4,8 @@ import {Button, Flex, Heading, Input, useColorMode} from '@chakra-ui/react';
 import "@fontsource/lexend-zetta"
 
 function Login() {
-  const loginStyle = useColorMode(); 
+  const loginStyle = useColorMode();
+  document.title = 'Login';
   return (
     <Flex height="100vh" alignItems="center" justifyContent="center" textAlign="center">
       <Flex direction="column" border="outset" background="primary.500" p={12} rounded={6}>

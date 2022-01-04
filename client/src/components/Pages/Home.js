@@ -19,6 +19,7 @@ export default function Home({
   ctaText,
   ...rest
 }) {
+  document.title = 'Home';
   return (
     <Flex
       align="center"
