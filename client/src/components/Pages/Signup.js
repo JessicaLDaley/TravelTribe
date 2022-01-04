@@ -1,38 +1,23 @@
 import React from "react";
 import Auth from "../../utils/auth";
-import { Link } from "react-router-dom";
+import {Button, Flex, Heading, Input} from '@chakra-ui/react';
 
 function Signup() {
   return (
-    <div>
-      <Link to={"/login"}>⬅ Login</Link>
-
-      <h2>Signup</h2>
-      <form>
-        <div>
-          <label htmlFor="firstName">First Name:</label>
-          <input placeholder="First" name="firstname" type="firstname"></input>
-        </div>
-        <div>
-          <label htmlFor="lastName">Last Name:</label>
-          <input placeholder="Last" name="lastname" type="lastname"></input>
-        </div>
-        <div>
-          <label htmlFor="Email">Email:</label>
-          <input
-            placeholder="email@example.com"
-            name="email"
-            type="email"></input>
-        </div>
-        <div>
-          <label htmlFor="Pasword">Password:</label>
-          <input placeholder="******" name="password" type="password"></input>
-        </div>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+    <Flex height="100vh" alignItems="center" justifyContent="center" textAlign="center">
+      <Flex direction="column" border="outset" background="primary.500" p={12} rounded={6}>
+        <Heading mb={6} color="white">Signup</Heading>
+        <Input placeholder="First Name" variant="filled"color="primary.400" mb={3} type="text"/>
+        <Input placeholder="Last Name" variant="filled" color="primary.400"mb={3} type="text"/>
+        <Input placeholder="email@example.com" variant="filled" color="primary.400"mb={3} type="email"/>
+        <Input placeholder="password" variant="filled" color="primary.400" mb={6} type="password"/>
+        <Button color={["primary.500", "primary.500", "white", "white"]}
+            bg={["white", "white", "primary.300", "primary.300"]}
+            _hover={{
+              bg: ["primary.100", "primary.100", "primary.400", "primary.400"]
+            }}>Signup</Button>
+      </Flex>
+    </Flex>
   );
 }
 

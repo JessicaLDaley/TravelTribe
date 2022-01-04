@@ -1,30 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
-//import Auth from "../../utils/auth";
+import Auth from "../../utils/auth";
+import {Button, Flex, Heading, Input, useColorMode} from '@chakra-ui/react';
+import "@fontsource/lexend-zetta"
 
 function Login() {
+  const loginStyle = useColorMode(); 
   return (
-    <div>
-      <Link to={"/signup"}>➡ Signup</Link>
-
-      <h2>Login</h2>
-      <form>
-        <div>
-          <label htmlFor="Email">Email:</label>
-          <input
-            placeholder="email@example.com"
-            name="email"
-            type="email"></input>
-        </div>
-        <div>
-          <label htmlFor="Password">Password:</label>
-          <input placeholder="******" name="password" type="password"></input>
-        </div>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+    <Flex height="100vh" alignItems="center" justifyContent="center" textAlign="center">
+      <Flex direction="column" border="outset" background="primary.500" p={12} rounded={6}>
+        <Heading mb={6}color="white">Login</Heading>
+        <Input placeholder="email@example.com" variant="filled" mb={3} type="email"/>
+        <Input placeholder="password" variant="filled" mb={6} type="password"/>
+        <Button color={["primary.500", "primary.500", "white", "white"]}
+            bg={["white", "white", "primary.300", "primary.300"]}
+            _hover={{
+              bg: ["primary.100", "primary.100", "primary.400", "primary.400"]
+            }}>Log In</Button>
+      </Flex>
+    </Flex>
   );
 }
 
