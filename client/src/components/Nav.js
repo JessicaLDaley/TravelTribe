@@ -1,8 +1,6 @@
 import React from "react";
 import Auth from "../utils/auth.js";
-import { Link } from "react-router-dom";
-
-
+import { NavLink } from "react-router-dom";
 
 function Nav() {
   function showNav() {
@@ -10,7 +8,7 @@ function Nav() {
       return (
         <ul>
           <li>
-            <Link to={"/dashboard"}>Dashboard</Link>
+            <NavLink to="/dashboard">Dashboard</NavLink>
           </li>
           <li>
             <a>Logout</a>
@@ -21,10 +19,10 @@ function Nav() {
       return (
         <ul>
           <li>
-            <Link to={"/login"}>Login</Link>
+            <NavLink to="/login">Login</NavLink>
           </li>
           <li>
-            <Link to={"/signup"}>Signup</Link>
+            <NavLink to="/signup">Signup</NavLink>
           </li>
         </ul>
       );
@@ -33,9 +31,9 @@ function Nav() {
   return (
     <header>
       <h1>
-        <Link to={"/"}>
-         TripTribe
-        </Link>
+        <NavLink to="/">
+          TripTribe
+        </NavLink>
       </h1>
 
       <nav>{showNav()}</nav>

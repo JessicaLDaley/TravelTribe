@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 
 import Logo from "./Logo";
 // Hamburger menue navbar 
@@ -52,7 +53,7 @@ const MenuToggle = ({ toggle, isOpen }) => {
 
 const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
   return (
-    <Link href={to}>
+    <Link as={NavLink} to={to}>
       <Text display="block" {...rest}>
         {children}
       </Text>
@@ -74,8 +75,8 @@ const MenuLinks = ({ isOpen }) => {
         pt={[4, 4, 0, 0]}
       >
         <MenuItem to="/">Home</MenuItem>
-       <MenuItem to="/Login">Login </MenuItem>
-        <MenuItem to="/Dashboard">Dashboard </MenuItem>
+        <MenuItem to="/Login">Login</MenuItem>
+        <MenuItem to="/Dashboard">Dashboard</MenuItem>
         <MenuItem to="/Signup" isLast>
           <Button
             size="sm"
