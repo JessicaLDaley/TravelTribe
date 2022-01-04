@@ -20,7 +20,7 @@
     "url": "https://github.com/JessicaLDaley/travel-app/issues"
   },
   "homepage": "https://github.com/JessicaLDaley/travel-app#readme",
-  "dependencies": {
+  "devDependencies": {
     "concurrently": "^7.0.0"
   }
 }
