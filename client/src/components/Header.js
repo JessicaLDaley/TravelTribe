@@ -3,7 +3,7 @@ import { Link, Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
 import Logo from "./Logo";
-// Hamburger menue navbar 
+// Hamburger menu navbar
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -11,10 +11,12 @@ const NavBar = (props) => {
 
   return (
     <NavBarContainer {...props}>
-      <Logo
-        w="100px"
-        color={["white", "gray", "primary.500", "primary.500"]}
-      />
+      <NavLink to="/">
+        <Logo
+          w="100px"
+          color={["white", "gray", "primary.500", "primary.500"]}
+        />
+      </NavLink>
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} />
     </NavBarContainer>
