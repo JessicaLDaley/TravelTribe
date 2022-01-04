@@ -40,7 +40,7 @@ const resolvers = {
       const user = await User.create(args)
       const token = signToken(user)
 
-      return { user }
+      return { user, token }
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email })
@@ -56,7 +56,7 @@ const resolvers = {
       }
 
       const token = signToken(user)
-      return { user }
+      return { user, token }
     },
     addTrip: async (parent, args, context) => {
       if (context.user) {
