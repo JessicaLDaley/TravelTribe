@@ -8,10 +8,63 @@ import {
     ModalBody,
     ModalCloseButton,
     Button,
-    useDisclosure
+    useDisclosure,
+    Flex
 } from '@chakra-ui/react'
 
+import {
+    Input,
+    FormControl,
+    FormLabel,
+} from '@chakra-ui/react'
+
+// connect this form to the addTrip mutation
+// when the button is pressed the graphql mutation is used
+
+// tripCoordinates
+// tripCompanion {
+// _id
+// username
+// email
+// }
+
 function TripForm(){
+    return(
+        <Flex direction="column">
+            <FormControl isRequired={true}>
+                <FormLabel htmlFor='tripname'>Trip Name</FormLabel>
+                <Input id='tripname' type='text'/>
+            </FormControl>
+
+            <FormControl isRequired={true}>
+                <FormLabel htmlFor='tripdesc'>Trip Description</FormLabel>
+                <Input id='tripdesc' type='text'/>
+            </FormControl>
+
+            <FormControl isRequired={true}>
+                <FormLabel htmlFor='tripcomp'>Trip Companions</FormLabel>
+                <Input id='tripcomp' type='text'/>
+            </FormControl>
+
+            <FormControl isRequired={true}>
+                <FormLabel htmlFor='tripdest'>Trip Destination</FormLabel>
+                <Input id='tripdest' type='text'/>
+            </FormControl>
+
+            <FormControl isRequired={true}>
+                <FormLabel htmlFor='tripstart'>Trip Start Date</FormLabel>
+                <Input id='tripstart' type='date'/>
+            </FormControl>
+
+            <FormControl isRequired={true}>
+                <FormLabel htmlFor='tripend'>Trip End Date</FormLabel>
+                <Input id='tripend' type='date'/>
+            </FormControl>
+        </Flex>
+    );
+}
+
+function TripModal(){
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         <>
@@ -23,7 +76,7 @@ function TripForm(){
                 <ModalHeader>New Trip Form</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    were gonna put a form here to collect the proper data to create a new trip
+                    <TripForm/>
                 </ModalBody>
                 <ModalFooter>
                     <Button>Create Trip</Button>
@@ -35,4 +88,4 @@ function TripForm(){
     )
 }
 
-export default TripForm;
+export default TripModal;
