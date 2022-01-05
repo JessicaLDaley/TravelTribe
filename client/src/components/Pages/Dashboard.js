@@ -1,10 +1,10 @@
 import React from "react";
-import TripForm from "../TripForm";
+import TripModal from "../TripForm";
 
 function Dashboard() {
   document.title = 'Dashboard';
   return (
-    <TripForm/>
+    <TripModal/>
   );
 }
 
