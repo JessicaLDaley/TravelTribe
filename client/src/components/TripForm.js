@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     Modal,
     ModalOverlay,
@@ -9,9 +9,42 @@ import {
     ModalCloseButton,
     Button,
     useDisclosure
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
+import { ADD_TRIP } from '../utils/mutations';
+import { useMutation } from "@apollo/client";
 
 function TripForm(){
+    const [formState, setFormState] = useState({
+      tripName: '',
+      tripDetails: '',
+      tripDestination: '',
+      tripCoordinates: '',
+      tripDeparture: '',
+      tripReturn: ''
+    });
+    const [addTrip] = useMutation(ADD_TRIP);
+
+    const handleChange = (event) => {
+      const{ name, value } = event.target;
+
+      setFormState({
+        ...formState,
+        [name]: value
+      });
+    };
+
+    const handleFormSubmit = async (event) => {
+      event.preventDefault();
+
+      try {
+        const { data } = await addTrip({
+          variables: { ...formState }
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         <>
