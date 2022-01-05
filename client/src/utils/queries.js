@@ -76,3 +76,19 @@ export const QUERY_ME = gql`
   }
 `;
 
+export const QUERY_TRIP_DASH = gql`
+  query trips($username: String!) {
+    trips(username: $username) {
+      _id
+      tripName
+      tripDetails
+      tripDestination
+      tripCoordinates
+      companionCount
+      commentCount
+      placesCount
+      pictureCount
+    }
+  }
+`
+

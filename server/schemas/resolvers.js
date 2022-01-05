@@ -28,7 +28,7 @@ const resolvers = {
       .populate('companions')
     },
     trips: async (parent, { username }) => {
-      const params = username ? { username } : {}
+      const params = tripCompanions ? { username } : {}
       return Trip.find(params).sort({ tripDeparture: -1 })
     },
     trip: async (parent, { _id }) => {

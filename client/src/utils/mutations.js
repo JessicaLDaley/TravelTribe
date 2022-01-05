@@ -41,3 +41,51 @@ export const ADD_TRIP = gql`
     }
   }
 `
+
+export const ADD_COMMENT = gql`
+  mutation addComment($tripId: ID!, $commentText: String!, $username: String!) {
+    addComment(tripId: $tripId, commentText: $commentText, username: $username) {
+      _id
+      tripName
+      tripDetails
+      tripDestination
+      tripDeparture
+      tripReturn
+      tripCompanion {
+        _id
+        username
+        email
+      }
+      tripComments {
+        _id
+        commentText
+        username
+        createdAt
+      }
+    }
+  }
+`;
+
+export const ADD_COMPANION = gql`
+  mutation addCompanion(addCompanion($tripId: ID!, $username: String!) {
+    addCompanion(tripId: $tripId, username: $username){
+      _id
+      tripName
+      tripDetails
+      tripDestination
+      tripDeparture
+      tripReturn
+      tripCompanion {
+        _id
+        username
+        email
+      }
+      tripComments {
+        _id
+        commentText
+        username
+        createdAt
+      }
+    }
+  } 
+`
