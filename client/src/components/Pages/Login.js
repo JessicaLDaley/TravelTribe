@@ -5,10 +5,7 @@ import "@fontsource/lexend-zetta"
 import { useMutation } from "@apollo/client";
 import { LOGIN } from '../../utils/mutations';
 
-function Login() {
-
-
-  
+function Login() {  
   const loginStyle = useColorMode();
   document.title = 'Login';
 
