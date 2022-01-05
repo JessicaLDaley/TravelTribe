@@ -7,19 +7,24 @@ import Dashboard from "./components/Pages/Dashboard";
 import Landing from "./components/Pages/Landing";
 import Home from "./components/Pages/Home";
 
-import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache,
+  createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -33,17 +38,17 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Header/>
+        <Header />
         <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/signup" component={Signup}/>
-          <Route exact path="/login" component={Login}/>
-          <Route exact path="/dashboard" component={Dashboard}/>
-          <Landing/>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Landing />
         </Switch>
       </Router>
     </ApolloProvider>
-);
+  );
 }
 
 export default App;

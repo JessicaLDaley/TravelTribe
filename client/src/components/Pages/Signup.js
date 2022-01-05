@@ -4,11 +4,19 @@ import {Button, Flex, Heading, Input} from '@chakra-ui/react';
 import { ADD_USER } from '../../utils/mutations';
 import { useMutation } from "@apollo/client";
 
-function Signup() {
+const Signup = () => {
   document.title = 'Signup';
 
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
   const [addUser, { error }] = useMutation(ADD_USER);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value
+    });
+  };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -21,14 +29,6 @@ function Signup() {
     } catch (e) {
       console.error(e);
     }
-  };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value
-    });
   };
 
   return (

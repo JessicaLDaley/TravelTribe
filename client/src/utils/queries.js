@@ -12,6 +12,7 @@ export const QUERY_USER = gql`
         _id
         tripName
         tripDestination
+        tripCoordinates
       }
       companionCount
       companions {
@@ -20,4 +21,58 @@ export const QUERY_USER = gql`
       }
     }
   }
-`
+`;
+
+export const QUERY_ME = gql`
+  {
+    me {
+      _id
+      username
+      email
+      companionCount
+      companions {
+        _id
+        username
+        email
+      }
+      tripCount
+      trips {
+        _id
+        tripName
+        tripDetails
+        tripDestination
+        tripCoordinates
+        tripDeparture
+        tripReturn
+        companionCount
+        tripCompanions {
+          _id
+          username
+          email
+        }
+        commentCount
+        tripComments {
+          _id
+          commentText
+          username
+          createdAt
+        }
+        placesCount
+        placesToSee {
+          _id
+          tripName
+          username
+          createdAt
+        }
+        pictureCount
+        pictureAlbum {
+          pictureId
+          tripName
+          username
+          createdAt
+        }
+      }
+    }
+  }
+`;
+

@@ -1,6 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "proxy": "http://localhost:3001",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.5.6",
@@ -26,7 +27,6 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "homepage": "http://localhost:3000/",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

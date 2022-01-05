@@ -19,6 +19,10 @@ const tripSchema = new Schema(
       type: String,
       required: 'Where are we going?',
     },
+    tripCoordinates: {
+      type: String,
+      required: true
+    },
     tripComments: {
         type: Schema.Types.ObjectId,
         ref: 'Comment'      
