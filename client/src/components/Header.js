@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
+import Auth from "../utils/auth";
 
 import Logo from "./Logo";
 // Hamburger menu navbar
@@ -64,6 +65,7 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
 };
 
 const MenuLinks = ({ isOpen }) => {
+  console.log(Auth.loggedIn());
   return (
     <Box
       display={{ base: isOpen ? "block" : "none", md: "block" }}
@@ -77,8 +79,17 @@ const MenuLinks = ({ isOpen }) => {
         pt={[4, 4, 0, 0]}
       >
         <MenuItem to="/">Home</MenuItem>
+        {LoggedInLinks()}
+      </Stack>
+    </Box>
+  );
+};
+
+const LoggedInLinks = () => {
+  if (!Auth.loggedIn()) {
+    return (
+      <>
         <MenuItem to="/Login">Login</MenuItem>
-        <MenuItem to="/Dashboard">Dashboard</MenuItem>
         <MenuItem to="/Signup" isLast>
           <Button
             size="sm"
@@ -91,10 +102,28 @@ const MenuLinks = ({ isOpen }) => {
           >Create Account
           </Button>
         </MenuItem>
-      </Stack>
-    </Box>
-  );
-};
+      </>
+    )
+  } else {
+    return (
+      <>
+        <MenuItem onClick={() => Auth.logout()}>Logout</MenuItem>
+        <MenuItem to="/Dashboard">
+          <Button
+            size="sm"
+            rounded="md"
+            color={["primary.500", "primary.500", "white", "white"]}
+            bg={["white", "white", "primary.500", "primary.500"]}
+            _hover={{
+              bg: ["primary.100", "primary.100", "primary.400", "primary.400"]
+            }}
+          >Dashboard
+          </Button>
+        </MenuItem>
+      </>
+    )
+  }
+}
 
 const NavBarContainer = ({ children, ...props }) => {
   return (
