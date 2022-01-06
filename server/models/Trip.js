@@ -2,6 +2,7 @@ const { Schema, model } = require('mongoose')
 const placesSchema = require('./Places')
 const albumSchema = require('./Album')
 const dateFormat = require('../utils/dateFormat')
+const commentSchema = require('./Comment')
 
 const tripSchema = new Schema(
   {
@@ -19,13 +20,12 @@ const tripSchema = new Schema(
       type: String,
       required: 'Where are we going?',
     },
-    tripCoordinates: {
-      type: String,
-    },
-    tripComments: {
-        type: Schema.Types.ObjectId,
-        ref: 'Comment'      
-    },
+    tripCoordinates: [
+      { 
+        type: Number 
+      },
+    ],
+    tripComments: [commentSchema],
     tripCompanions: [
       {
         type: Schema.Types.ObjectId,
@@ -40,14 +40,8 @@ const tripSchema = new Schema(
       type: Date,
       get: timestamp => dateFormat(timestamp)
     },
-    placesToSee: {
-      type: Schema.Types.ObjectId,
-      ref: 'Places'  
-    },
-    pictureAlbum: {
-      type: Schema.Types.ObjectId,
-      ref: 'Album'  
-    }
+    placesToSee: [placesSchema],
+    pictureAlbum: [albumSchema]
   },
   {
     toJSON: {
@@ -57,9 +51,9 @@ const tripSchema = new Schema(
   }
 )
 
-// tripSchema.virtual('commentCount').get(function() {
-//   return this.tripComments.length;
-// })
+tripSchema.virtual('commentCount').get(function() {
+  return this.tripComments.length;
+})
 
 tripSchema.virtual('companionCount').get(function() {
   return this.tripCompanions.length;

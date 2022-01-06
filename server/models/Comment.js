@@ -1,5 +1,5 @@
-const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
+const { Schema } = require('mongoose');
+const dateFormat = require('../utils/dateFormatLong');
 
 const commentSchema = new Schema (
   {
@@ -12,7 +12,7 @@ const commentSchema = new Schema (
     createdAt: {
       type: Date,
       default: Date.now,
-      get: timestamp => dateFormat(timestamp)
+      get: timeFormat => dateFormat(timeFormat)
     },
     username: {
       type: String,
@@ -26,6 +26,5 @@ const commentSchema = new Schema (
   }
 )
 
-const Comment = model('Comment', commentSchema)
 
-module.exports = Comment
+module.exports = commentSchema

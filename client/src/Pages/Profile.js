@@ -17,14 +17,14 @@ function Profile() {
     variables: { username },
   });
   
-  const friend = data?.user
+  const user = data?.user
 
   const [addFriend] = useMutation(ADD_FRIEND);
 
   const handleClick = async () => {
     try {
       await addFriend({
-        variables: { id: friend._id }
+        variables: { id: user._id }
       });
     } catch (e) {
       console.error(e);
@@ -39,8 +39,8 @@ function Profile() {
       <Flex display="column">
         Welcome to {username}'s Profile
 
-        <ProfileMap trips={[]} />
-        <FriendsList user={friend} username={username} />
+        <ProfileMap trips={user?.trips}/>
+        <FriendsList user={user} username={username}/>
         <Button
           onClick={handleClick}
           borderRadius="8px"

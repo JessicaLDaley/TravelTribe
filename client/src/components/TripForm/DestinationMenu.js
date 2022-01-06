@@ -6,13 +6,14 @@ import {
 } from '@chakra-ui/react';
 import {getCountries, getStates, getCities} from '../../utils/worldData';
 
-function DestinationMenu(){
+function DestinationMenu({handleChange}){
     const [countries, setCountries] = useState([]);
     const [states, setStates] = useState([]);
     const [cities, setCities] = useState([]);
     const [selectedCountry, setSelectedCountry] = useState();
     const [selectedState, setSelectedState] = useState();
     const [selectedCity, setSelectedCity] = useState();
+    const [destination, setDestination] = useState();
 
     useEffect(() => {
         const loadCountries = async () => {
@@ -35,22 +36,33 @@ function DestinationMenu(){
         loadCities();
     }, [selectedState]);
 
+    useEffect(() => {
+        const updateDestination = () => {
+            setDestination(`${selectedCountry}, ${selectedState}, ${selectedCity}`);
+        }
+        updateDestination();
+    }, [selectedCity]);
+
+    useEffect(() => {
+        handleChange({target: {name: 'tripDestination', value: destination}});
+    }, [destination]);
+
     return(
-        <FormControl pb={1} isRequired>
+        <FormControl name="tripDestination" pb={1} isRequired>
             <FormLabel htmlFor='country'>Trip Destination</FormLabel>
-            <Select id='country' placeholder='Select country' pb={1} onChange={(e) => setSelectedCountry(e.target.value)}>
+            <Select name="country" id='country' placeholder='Select country' pb={1} onChange={(e) => setSelectedCountry(e.target.value)}>
                 {countries.map((country, index) => (
                     <option key={index} value={country}>{country}</option>
                 ))}
             </Select>
 
-            <Select id='state' placeholder='Select state' pb={1} onChange={(e) => setSelectedState(e.target.value)}>
+            <Select name="state" id='state' placeholder='Select state' pb={1} onChange={(e) => setSelectedState(e.target.value)}>
                 {states.map((state, index) => (
                     <option key={index} value={state}>{state}</option>
                 ))}
             </Select>
 
-            <Select id='city' placeholder='Select city' pb={1} onChange={(e) => setSelectedCity(e.target.value)}>
+            <Select name="city" id='city' placeholder='Select city' pb={1} onChange={(e) => setSelectedCity(e.target.value)}>
                 {cities.map((city, index) => (
                     <option key={index} value={city}>{city}</option>
                 ))}

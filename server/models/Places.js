@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema } = require('mongoose')
 
 const placesSchema = new Schema (
   {
@@ -17,6 +17,4 @@ const placesSchema = new Schema (
   }
 )
 
-const Places = model('Place', placesSchema)
-
-module.exports = Places
+module.exports = placesSchema

@@ -17,7 +17,7 @@ function FriendsModal({friends}) {
                 <ModalCloseButton />
                 <ModalBody>
                     {friends.map(friend => (
-                        <Link to={`./user/${friend.username}`} key={friend._id}><p>{friend.username}</p></Link>
+                        <Link to={`/user/${friend.username}`} key={friend._id}><p>{friend.username}</p></Link>
                     ))}
                 </ModalBody>
     
@@ -46,7 +46,7 @@ function FriendsList({user}){
                 <Tbody>
                     {friends.length > 0 ? friends.map(friend => (
                         <Tr key={friend._id}>
-                            <Td><Link to={`./user/${friend.username}`}>{friend.username}</Link></Td>
+                            <Td><Link to={`/user/${friend.username}`}>{friend.username}</Link></Td>
                         </Tr>
                     )) : <Text >😔 sad 😔</Text>}
                 </Tbody>
