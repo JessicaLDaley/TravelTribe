@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "../Pages/Home";
-import LandingLayout from "../LandingLayout";
+import LandingLayout from "../components/LandingLayout";
 
 export default function Landing() {
   return (

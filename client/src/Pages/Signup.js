@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Auth from "../../utils/auth";
+import Auth from "../utils/auth";
 import {Button, Flex, Heading, Input} from '@chakra-ui/react';
-import { ADD_USER } from '../../utils/mutations';
+import { ADD_USER } from '../utils/mutations';
 import { useMutation } from "@apollo/client";
 
 const Signup = () => {

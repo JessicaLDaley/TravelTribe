@@ -47,8 +47,6 @@ export const QUERY_ME = gql`
         companionCount
         tripCompanions {
           _id
-          username
-          email
         }
         commentCount
         tripComments {
