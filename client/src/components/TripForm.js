@@ -109,30 +109,30 @@ function TripModal({friends}){
     }
 
     const blankState = {
-      tripName: '',
-      tripDetails: '',
-      tripDestination: '',
-      tripCoordinates: '',
-      tripDeparture: '',
-      tripReturn: '',
-      tripCompanions: []
-  }
+        tripName: '',
+        tripDetails: '',
+        tripDestination: '',
+        tripCoordinates: '',
+        tripDeparture: '',
+        tripReturn: '',
+        tripCompanions: []
+    }
 
     const [formState, setFormState] = useState(blankState);
 
     const friendAdd = (event) => {
-      const checkedFriends = document.querySelectorAll('[role="menuitemcheckbox"]');
-      let friendsToAdd = [];
-      checkedFriends.forEach(element => {
-        if (element.ariaChecked === "true") {
-          friendsToAdd.push(element.value);
-        }
-      });
-      setFormState({
-        ...formState,
-        tripCompanions: friendsToAdd
-      });
-      console.log(formState);
+        const checkedFriends = document.querySelectorAll('[role="menuitemcheckbox"]');
+        let friendsToAdd = [];
+        checkedFriends.forEach(element => {
+            if (element.ariaChecked === "true") {
+            friendsToAdd.push(element.value);
+            }
+        });
+        setFormState({
+            ...formState,
+            tripCompanions: friendsToAdd
+        });
+        console.log(formState);
     }
 
     const handleChange = (event) => {
