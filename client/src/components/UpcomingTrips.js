@@ -11,33 +11,37 @@ import {
 
 function UpcomingTrips({ trips }) {
     return (
-        <Table justifyContent="center" variant='striped'>
+      
+        <Table size="md"justifyContent="center" variant='striped'>
             {trips.map(trip => (
                 <div key={trip._id}>
                     <Thead>
                         <Tr>
 
-                            <Th fontSize="sm" color="white" background="primary.500">Trip Name</Th>
-                            <Th fontSize="sm" color="white" background="primary.500">Trip Details</Th>
-                            <Th fontSize="sm" color="white" background="primary.500">Trip Destination</Th>
-                            <Th fontSize="sm" color="white" background="primary.500">Trip Departure</Th>
-                            <Th fontSize="sm" color="white" background="primary.500">Trip Return</Th>
-                            <Th fontSize="sm" color="white" background="primary.500">Trip Companions</Th>
+                            <Th border="outset" fontSize="sm" color="primary.500" >Trip Name</Th>
+                            <Th border="outset" fontSize="sm" color="primary.500" >Trip Details</Th>
+                            <Th border="outset" fontSize="sm" color="primary.500">Trip Destination</Th>
+                            <Th border="outset" fontSize="sm" color="primary.500">Trip Departure</Th>
+                            <Th border="outset" fontSize="sm" color="primary.500" >Trip Return</Th>
+                            <Th border="outset" fontSize="sm" color="primary.500" >Trip Companions</Th>
 
                         </Tr>
                     </Thead>
                     <Tbody>
                         <Tr>
-                            <Td> <Link to={`./trip/${trip._id}`}>{trip.tripName}</Link></Td>
-                            <Td>{trip.tripDetails}</Td>
-                            <Td>{trip.tripDestination}</Td>
-                            <Td>{trip.tripDeparture}</Td>
-                            <Td>{trip.tripReturn}</Td>
+                            <Td border="outset"> <Link to={`./trip/${trip._id}`}>{trip.tripName}</Link></Td>
+                            <Td border="outset">{trip.tripDetails}</Td>
+                            <Td border="outset">{trip.tripDestination}</Td>
+                            <Td border="outset">{trip.tripDeparture}</Td>
+                            <Td border="outset">{trip.tripReturn}</Td>
+                            <Td border="outset">{trip.tripCompanions}</Td>
                         </Tr>
                     </Tbody>
+                  
                 </div>
             ))}
         </Table>
+  
     );
 }
 

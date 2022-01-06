@@ -14,7 +14,7 @@ function Dashboard() {
   console.log(user);
 
   return (
-    <Flex width="70rem"direction="column">
+    <Flex width="120rem"direction="column">
       <TripModal friends={user?.friends}/>
       {loading? (
         <div/>

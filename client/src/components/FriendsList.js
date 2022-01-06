@@ -40,7 +40,7 @@ function FriendsList({user}){
             <Table justify-content="center" variant="striped">
                 <Thead>
                     <Tr>
-                        <Th height="2rem"fontSize="sm" color="white" background="primary.500" text-align="right">{username}'s Tribe ({companionCount})</Th>
+                        <Th background="primary.400"border="outset" height="2rem"fontSize="sm" color="white"  text-align="right">{username}'s Tribe ({companionCount})</Th>
                     </Tr>
                 </Thead>
                 <Tbody>
@@ -48,7 +48,7 @@ function FriendsList({user}){
                         <Tr key={friend._id}>
                             <Td><Link to={`./user/${friend.username}`}>{friend.username}</Link></Td>
                         </Tr>
-                    )) : <Text>😔 sad 😔</Text>}
+                    )) : <Text >😔 sad 😔</Text>}
                 </Tbody>
                 {/* only display the button to access the friends modal if the user has more than 5 friends */}
                 {companionCount > 5 ? (
