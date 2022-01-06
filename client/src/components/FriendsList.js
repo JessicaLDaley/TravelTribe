@@ -1,11 +1,11 @@
 import React from "react";
 import {Flex, Table, Thead, Tbody, Tfoot, Th, Tr, Td, Button} from '@chakra-ui/react'
 import {Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton} from '@chakra-ui/react'
-import {useDisclosure} from '@chakra-ui/react';
+import {useDisclosure, Text} from '@chakra-ui/react';
 import {Link} from 'react-router-dom';
 
 function FriendsModal({friends}) {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+    const { isOpen, onOpen, onClose } = useDisclosure();
     return (
         <>
         <Button onClick={onOpen}>View Entire Tribe</Button>
@@ -17,7 +17,7 @@ function FriendsModal({friends}) {
                 <ModalCloseButton />
                 <ModalBody>
                     {friends.map(friend => (
-                        <Link to={`./user/${friend._id}`} key={friend._id}>{friend}</Link>
+                        <Link to={`./user/${friend._id}`} key={friend._id}>{friend.username}</Link>
                     ))}
                 </ModalBody>
     
@@ -56,11 +56,11 @@ function FriendsList({user}){
                     {/* loop thru the friends list and display 5 of them on the page */}
                     {/* ideally we will be able to click these friends and it will bring us to their profile */}
                     {/* the footer of the table will be a button that will open a modal that scrolls to view all friends */}
-                    {friends.map(friend => (
+                    {friends.length > 0 ? friends.map(friend => (
                         <Tr key={friend._id}>
-                            <Td>{friend}</Td>
+                            <Td>{friend.username}</Td>
                         </Tr>
-                    ))}
+                    )) : <Text textAlign="center">😔 sad 😔</Text>}
                 </Tbody>
                 <Tfoot>
                     <Tr>
