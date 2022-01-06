@@ -37,10 +37,10 @@ function FriendsList({user}){
 
     return(
         <Flex>
-            <Table>
+            <Table justify-content="center" variant="striped">
                 <Thead>
                     <Tr>
-                        <Th fontSize="sm" color="white" background="primary.500" text-align="right">{username}'s Tribe ({companionCount})</Th>
+                        <Th height="2rem"fontSize="sm" color="white" background="primary.500" text-align="right">{username}'s Tribe ({companionCount})</Th>
                     </Tr>
                 </Thead>
                 <Tbody>

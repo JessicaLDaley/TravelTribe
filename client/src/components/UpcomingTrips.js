@@ -11,7 +11,7 @@ import {
 
 function UpcomingTrips({ trips }) {
     return (
-        <Table variant='simple'>
+        <Table justifyContent="center" variant='striped'>
             {trips.map(trip => (
                 <div key={trip._id}>
                     <Thead>
