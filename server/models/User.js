@@ -26,7 +26,7 @@ const userSchema = new Schema(
         ref: 'Trip'
       }
     ],
-    companions: [
+    friends: [
       {
         type: Schema.Types.ObjectId,
         ref: 'User'
@@ -60,7 +60,7 @@ userSchema.virtual('tripCount').get(function() {
 });
 
 userSchema.virtual('companionCount').get(function() {
-  return this.companions.length;
+  return this.friends.length;
 });
 
 const User = model('User', userSchema);

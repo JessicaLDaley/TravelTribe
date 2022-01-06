@@ -28,7 +28,7 @@ import {
 // fake friends data until we connect to graphql and pull the users friends
 const friends = ['mike', 'jim', 'jack', 'john', 'joe', 'larry', 'paul', 'peter'];
 
-function FriendsMenu(){
+function FriendsMenu({handleChange}){
     return(
         <Menu closeOnSelect={false}>
             <MenuButton as={Button} colorScheme='blue' minWidth="100%">
@@ -38,7 +38,7 @@ function FriendsMenu(){
                 <MenuOptionGroup title='Companions' type='checkbox'>
                     {/* map over your friends here and create a menuItemOption for each one */}
                     {friends.map((friend, index) => (
-                        <MenuItemOption value={friend} key={index}>{friend}</MenuItemOption>
+                        <MenuItemOption value={friend} key={index} onClick={handleChange}>{friend}</MenuItemOption>
                     ))}
                 </MenuOptionGroup>
             </MenuList>
@@ -62,9 +62,9 @@ function TripForm({handleChange}){
                 <Input id='tripdesc' type='text' name='tripDetails' onChange={handleChange}/>
             </FormControl>
 
-            <FormControl isRequired={true} pb={1}>
+            <FormControl pb={1}>
                 <FormLabel htmlFor='tripcomp'>Trip Companions</FormLabel>
-                <FriendsMenu/>
+                <FriendsMenu handleChange={handleChange}/>
             </FormControl>
 
             <FormControl isRequired={true} pb={1}>
@@ -75,12 +75,12 @@ function TripForm({handleChange}){
             <Flex pb={1}>
                 <FormControl isRequired={true}>
                     <FormLabel htmlFor='tripstart'>Trip Start Date</FormLabel>
-                    <Input id='tripstart' type='date' onChange={handleChange}/>
+                    <Input id='tripstart' type='date' name="tripDeparture" onChange={handleChange}/>
                 </FormControl>
 
                 <FormControl isRequired={true}>
                     <FormLabel htmlFor='tripend'>Trip End Date</FormLabel>
-                    <Input id='tripend' type='date' onChange={handleChange}/>
+                    <Input id='tripend' type='date' name="tripReturn" onChange={handleChange}/>
                 </FormControl>
             </Flex>
         </Flex>

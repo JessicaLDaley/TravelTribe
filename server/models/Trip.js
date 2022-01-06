@@ -21,7 +21,6 @@ const tripSchema = new Schema(
     },
     tripCoordinates: {
       type: String,
-      required: true
     },
     tripComments: {
         type: Schema.Types.ObjectId,
