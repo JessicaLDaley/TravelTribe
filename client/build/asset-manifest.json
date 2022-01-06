@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c38e5d76.css",
+    "main.js": "/static/js/main.17f7e54c.js",
+    "static/js/377.c1855308.chunk.js": "/static/js/377.c1855308.chunk.js",
+    "static/media/logo.jpg": "/static/media/logo.35542f6726528ad2de88.jpg",
+    "static/media/lexend-zetta-all-400-normal.woff": "/static/media/lexend-zetta-all-400-normal.2103bb977bbd96c59286.woff",
+    "static/media/lexend-zetta-latin-400-normal.woff2": "/static/media/lexend-zetta-latin-400-normal.9c9a22bb8bd5f677349b.woff2",
+    "static/media/lexend-zetta-latin-ext-400-normal.woff2": "/static/media/lexend-zetta-latin-ext-400-normal.d8ca6db40f81c342c4b8.woff2",
+    "static/media/lexend-zetta-vietnamese-400-normal.woff2": "/static/media/lexend-zetta-vietnamese-400-normal.fd8bdd48fac9a82b9e18.woff2",
+    "index.html": "/index.html",
+    "main.c38e5d76.css.map": "/static/css/main.c38e5d76.css.map",
+    "main.17f7e54c.js.map": "/static/js/main.17f7e54c.js.map",
+    "377.c1855308.chunk.js.map": "/static/js/377.c1855308.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c38e5d76.css",
+    "static/js/main.17f7e54c.js"
+  ]
+}

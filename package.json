@@ -22,5 +22,10 @@
   "homepage": "https://github.com/JessicaLDaley/travel-app#readme",
   "devDependencies": {
     "concurrently": "^7.0.0"
+  },
+  "dependencies": {
+    "chakra": "0.0.3",
+    "icons": "^1.0.0",
+    "react-table": "^7.7.0"
   }
 }
