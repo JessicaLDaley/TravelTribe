@@ -1,10 +1,10 @@
 import React from "react";
-import TripModal from "../TripForm/TripModal";
-import UpcomingTrips from "../UpcomingTrips";
-import FriendsList from "../FriendsList";
+import TripModal from "../components/TripForm/TripModal";
+import UpcomingTrips from '../components/UpcomingTrips';
+import FriendsList from "../components/FriendsList";
 import {Flex} from '@chakra-ui/react';
 import {useQuery} from '@apollo/client';
-import {QUERY_ME} from '../../utils/queries';
+import {QUERY_ME} from '../utils/queries';
 
 function Dashboard() {
   document.title = 'Dashboard';

@@ -1,10 +1,10 @@
 import React from "react";
-import ProfileMap from "../MapLogic";
-import FriendsList from '../FriendsList';
+import ProfileMap from "../components/MapLogic";
+import FriendsList from '../components/FriendsList';
 import {Flex} from '@chakra-ui/react'
 import {useParams} from "react-router-dom";
 import {useQuery} from "@apollo/client";
-import {QUERY_USER} from '../../utils/queries';
+import {QUERY_USER} from '../utils/queries';
 
 function Profile(){
     // pull the username from the params

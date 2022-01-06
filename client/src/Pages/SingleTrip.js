@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { QUERY_TRIP } from '../../utils/queries';
+import { QUERY_TRIP } from '../utils/queries';
 import {Flex} from '@chakra-ui/react';
 
 const SingleTrip = props => {

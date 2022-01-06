@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Auth from "../../utils/auth";
+import Auth from "../utils/auth";
 import {Button, Flex, Heading, Input, useColorMode} from '@chakra-ui/react';
 import "@fontsource/lexend-zetta"
 import { useMutation } from "@apollo/client";
-import { LOGIN } from '../../utils/mutations';
+import { LOGIN } from '../utils/mutations';
 
 function Login() {  
   const loginStyle = useColorMode();

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import Auth from "../../utils/auth"
+import Auth from "../utils/auth"
 import {
   Box,
   Button,
