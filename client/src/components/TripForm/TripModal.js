@@ -39,7 +39,7 @@ function TripModal({friends}){
         tripName: '',
         tripDetails: '',
         tripDestination: '',
-        tripCoordinates: '',
+        tripCoordinates: [],
         tripDeparture: '',
         tripReturn: '',
         tripCompanions: []
@@ -63,6 +63,7 @@ function TripModal({friends}){
     }
 
     const handleChange = (event) => {
+        console.log(event);
         const{ name, value } = event.target;
 
         setFormState({

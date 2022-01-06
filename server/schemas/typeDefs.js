@@ -17,7 +17,7 @@ type Trip {
   tripName: String
   tripDetails: String
   tripDestination: String
-  tripCoordinates: String
+  tripCoordinates: [Int]
   commentCount: Int
   tripComments: [Comment]
   companionCount: Int
@@ -55,7 +55,7 @@ type Query {
   me: User
   users: [User]
   user(username: String!): User
-  trips(username: String!): [Trip]
+  trips: [Trip]
   trip(_id: ID!): Trip
 }
 
@@ -63,9 +63,9 @@ type Mutation {
   login(email: String!, password: String!): Auth
   addUser(username: String!, email: String!, password: String!): Auth
   addFriend(friendId: ID!): User
-  addTrip(tripName: String!, tripDetails: String!, tripDestination: String, tripCoordinates: String, tripDeparture: String, tripReturn: String, tripCompanions: [ID]): Trip
+  addTrip(tripName: String!, tripDetails: String!, tripDestination: String, tripCoordinates: [Int], tripCompanions: [ID], tripDeparture: String, tripReturn: String): Trip
   addCompanion(tripId: ID!, username: String!): Trip
-  addComment(tripId: ID!, commentText: String!, username: String!): Trip 
+  addComment(tripId: ID!, commentText: String!): Trip 
   addPlaces(tripId: ID!, placeName: String!, placeType: String!): Trip
   addPicture(tripId: ID!, pictureId: String!, tripName: String!, username: String!): Trip
 }

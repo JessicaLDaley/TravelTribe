@@ -27,9 +27,10 @@ const resolvers = {
       .populate('trips')
       .populate('friends')
     },
-    trips: async (parent, { username }) => {
-      const params = tripCompanions ? { username } : {}
-      return Trip.find(params).sort({ tripDeparture: -1 })
+    trips: async () => {
+      return Trip.find()
+      .populate('tripComments')
+      .populate('tripCompanions')
     },
     trip: async (parent, { _id }) => {
       return Trip.findOne({ _id });
