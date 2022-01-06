@@ -89,8 +89,7 @@ function TripModal({friends}){
                     />
                 </ModalBody>
                 <ModalFooter>
-                    <Button onClick={handleFormSubmit}>Create Trip</Button>
-                    <Button colorScheme='blue' mr={3} onClick={onClose}>Close</Button>
+                    <Button colorScheme="blue" onClick={handleFormSubmit}>Create Trip</Button>
                 </ModalFooter>
             </ModalContent>
         </Modal>
