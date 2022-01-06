@@ -19,12 +19,12 @@ function UpcomingTrips({ trips }) {
                 <div key={trip._id}>
             <Tr>
           
-                <Th fontSize="sm">Trip Name</Th>
-                <Th fontSize="sm">Trip Details</Th>
-                <Th fontSize="sm">Trip Destination</Th>
-                <Th fontSize="sm">Trip Departure</Th>
-                <Th fontSize="sm">Trip Return</Th>
-                <Th fontSize="sm">Trip Companions</Th>
+                <Th fontSize="sm" color="white"background="primary.400">Trip Name</Th>
+                <Th fontSize="sm"color="white"background="primary.400">Trip Details</Th>
+                <Th fontSize="sm"color="white"background="primary.400">Trip Destination</Th>
+                <Th fontSize="sm"color="white"background="primary.400">Trip Departure</Th>
+                <Th fontSize="sm"color="white"background="primary.400">Trip Return</Th>
+                <Th fontSize="sm"color="white"background="primary.400">Trip Companions</Th>
                 
             </Tr>
          
