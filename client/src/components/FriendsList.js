@@ -35,7 +35,7 @@ function FriendsModal({friends}) {
 // obviously not the final styling for this component please be kind, im merely throwing things together in an attempt to bring this application to life
 
 function FriendsList({user}){
-    const {friends, username} = user;
+    const {friends, username, companionCount} = user;
     // let shortFriendsList = [];
     // if(friends.length <= 5){
     //     shortFriendsList = friends.slice(0, friends.length);
@@ -48,8 +48,7 @@ function FriendsList({user}){
             <Table>
                 <Thead>
                     <Tr>
-                        {/* later on when we connect this to the database we can have this Th be dynamic, so when you visit your profile it will say your tribe, but if you visit your friends it will say mikes tribe */}
-                        <Th>{username}'s Tribe</Th>
+                        <Th>{username}'s Tribe ({companionCount})</Th>
                     </Tr>
                 </Thead>
                 <Tbody>
@@ -60,16 +59,18 @@ function FriendsList({user}){
                         <Tr key={friend._id}>
                             <Td><Link to={`./user/${friend.username}`}>{friend.username}</Link></Td>
                         </Tr>
-                    )) : <Text textAlign="center">😔 sad 😔</Text>}
+                    )) : <Text>😔 sad 😔</Text>}
                 </Tbody>
-                <Tfoot>
-                    <Tr>
-                        {/* if you arent friends with someone you shouldnt be able to see all of their friends */}
-                        <Th>
-                            <FriendsModal friends={friends}/>
-                        </Th>
-                    </Tr>
-                </Tfoot>
+                {/* only display the button to access the friends modal if the user has more than 5 friends */}
+                {companionCount > 5 ? (
+                    <Tfoot>
+                        <Tr>
+                            <Th>
+                                <FriendsModal friends={friends}/>
+                            </Th>
+                        </Tr>
+                    </Tfoot>
+                ) :  <></>}
             </Table>
         </Flex>
     );
