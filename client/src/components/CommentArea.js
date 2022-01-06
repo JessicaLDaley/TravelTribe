@@ -15,5 +15,4 @@ const CommentArea = ({comments}) => {
     </Flex>
   )
 }
-
 export default CommentArea;

@@ -43,15 +43,15 @@ export const ADD_TRIP = gql`
 `
 
 export const ADD_COMMENT = gql`
-  mutation addComment($tripId: ID!, $commentText: String!, $username: String!) {
-    addComment(tripId: $tripId, commentText: $commentText, username: $username) {
+  mutation addComment($tripId: ID!, $commentText: String!) {
+    addComment(tripId: $tripId, commentText: $commentText) {
       _id
       tripName
       tripDetails
       tripDestination
       tripDeparture
       tripReturn
-      tripCompanion {
+      tripCompanions {
         _id
         username
         email
@@ -75,7 +75,7 @@ export const ADD_COMPANION = gql`
       tripDestination
       tripDeparture
       tripReturn
-      tripCompanion {
+      tripCompanions {
         _id
         username
         email
