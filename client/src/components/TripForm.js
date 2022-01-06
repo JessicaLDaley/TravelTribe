@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { ADD_TRIP } from '../utils/mutations';
 import {
     Modal,
@@ -28,9 +28,16 @@ import {
 import {QUERY_ME} from '../utils/queries';
 
 // fake friends data until we connect to graphql and pull the users friends
-const friends = ['mike', 'jim', 'jack', 'john', 'joe', 'larry', 'paul', 'peter'];
+let friends = [];
 
 function FriendsMenu({handleChange}){
+
+    const {loading, data} = useQuery(QUERY_ME);
+
+    const user = data?.me;
+
+    friends.push(user.friends)
+
     return(
         <Menu closeOnSelect={false}>
             <MenuButton as={Button} colorScheme='blue' minWidth="100%">
