@@ -9,7 +9,7 @@ function FriendsModal({friends}) {
         <>
         <Button onClick={onOpen}>View Entire Tribe</Button>
 
-        <Modal isOpen={isOpen} onClose={onClose}>
+        <Modal isOpen={isOpen} onClose={onClose} isCentered>
             <ModalOverlay />
             <ModalContent>
                 <ModalHeader>Tribe Members</ModalHeader>
