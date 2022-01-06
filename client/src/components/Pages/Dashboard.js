@@ -14,7 +14,7 @@ function Dashboard() {
 
   return (
     <Flex direction="column">
-      <TripModal/>
+      <TripModal friends={user.friends}/>
       {loading? (
         <div/>
       ) : (

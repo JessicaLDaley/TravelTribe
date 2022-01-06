@@ -27,16 +27,7 @@ import {
 
 import {QUERY_ME} from '../utils/queries';
 
-// fake friends data until we connect to graphql and pull the users friends
-let friends = [];
-
-function FriendsMenu({handleChange}){
-
-    const {loading, data} = useQuery(QUERY_ME);
-
-    const user = data?.me;
-
-    friends.push(user.friends)
+function FriendsMenu({handleChange, friends}){
 
     return(
         <Menu closeOnSelect={false}>
@@ -47,7 +38,7 @@ function FriendsMenu({handleChange}){
                 <MenuOptionGroup title='Companions' type='checkbox'>
                     {/* map over your friends here and create a menuItemOption for each one */}
                     {friends.map((friend, index) => (
-                        <MenuItemOption value={friend} key={index} onClick={handleChange}>{friend}</MenuItemOption>
+                        <MenuItemOption value={friend.username} key={index} onClick={handleChange}>{friend.username}</MenuItemOption>
                     ))}
                 </MenuOptionGroup>
             </MenuList>
@@ -58,7 +49,7 @@ function FriendsMenu({handleChange}){
 
 // connect this form to the addTrip mutation
 // when the button is pressed the graphql mutation is used
-function TripForm({handleChange}){
+function TripForm({handleChange, friends}){
     return(
         <Flex direction="column">
             <FormControl isRequired={true} pb={1}>
@@ -73,7 +64,8 @@ function TripForm({handleChange}){
 
             <FormControl pb={1}>
                 <FormLabel htmlFor='tripcomp'>Trip Companions</FormLabel>
-                <FriendsMenu handleChange={handleChange}/>
+                <FriendsMenu handleChange={handleChange}
+                friends={friends}/>
             </FormControl>
 
             <FormControl isRequired={true} pb={1}>
@@ -96,7 +88,7 @@ function TripForm({handleChange}){
     );
 }
 
-function TripModal(){
+function TripModal({friends}){
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     const [addTrip] = useMutation(ADD_TRIP);
@@ -145,7 +137,7 @@ function TripModal(){
                 <ModalHeader textAlign="center">New Trip Form</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    <TripForm
+                    <TripForm friends={friends}
                         handleChange={handleChange}
                     />
                 </ModalBody>
