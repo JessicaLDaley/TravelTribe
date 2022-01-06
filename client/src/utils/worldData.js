@@ -32,7 +32,8 @@ export async function getCities(state){
         }
     });
     
-    let cities = await response.json();
+    let data = await response.json();
+    let cities = data.map(d => d.city_name);
     return cities;
 }
 
