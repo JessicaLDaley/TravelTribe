@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_TRIP } from '../utils/queries';
 import {Flex} from '@chakra-ui/react';
+import CommentArea from '../components/CommentArea';
 
 const SingleTrip = props => {
   const { id: tripId } = useParams();
@@ -22,6 +23,7 @@ const SingleTrip = props => {
       <p>{trip.tripDestination}</p>
       <p>{trip.tripDeparture}</p>
       <p>{trip.tripReturn}</p>
+      <CommentArea comments={trip.tripComments}/>
     </Flex>
   )
 }

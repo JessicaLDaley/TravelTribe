@@ -55,7 +55,7 @@ type Query {
   me: User
   users: [User]
   user(username: String!): User
-  trips(username: String!): [Trip]
+  trips: [Trip]
   trip(_id: ID!): Trip
 }
 
@@ -65,7 +65,7 @@ type Mutation {
   addFriend(friendId: ID!): User
   addTrip(tripName: String!, tripDetails: String!, tripDestination: String, tripCoordinates: String, tripDeparture: String, tripReturn: String, tripCompanions: [ID]): Trip
   addCompanion(tripId: ID!, username: String!): Trip
-  addComment(tripId: ID!, commentText: String!, username: String!): Trip 
+  addComment(tripId: ID!, commentText: String!): Trip 
   addPlaces(tripId: ID!, placeName: String!, placeType: String!): Trip
   addPicture(tripId: ID!, pictureId: String!, tripName: String!, username: String!): Trip
 }

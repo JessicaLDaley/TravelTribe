@@ -18,7 +18,7 @@ const albumSchema = new Schema (
     createdAt: {
       type: Date,
       default: Date.now,
-      get: timestamp => dateFormat(timestamp)
+      get: timeFormat => dateFormat(timeFormat)
     }
   },
   {
@@ -29,6 +29,4 @@ const albumSchema = new Schema (
   }
 )
 
-const Album = model('Album', albumSchema)
-
-module.exports = Album
+module.exports = albumSchema
