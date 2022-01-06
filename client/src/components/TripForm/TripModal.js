@@ -75,7 +75,7 @@ function TripModal({friends}){
 
     return (
         <>
-        <Button onClick={onOpen}>Create a new Trip</Button>
+        <Button onClick={onOpen} mb={2}>Create a new Trip</Button>
 
         <Modal isOpen={isOpen} onClose={onClose} isCentered>
             <ModalOverlay />

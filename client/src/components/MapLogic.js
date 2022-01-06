@@ -12,7 +12,7 @@ export default function ProfileMap({trips}){
             <MapContainer center={[50, 0]} zoom={2} scrollWheelZoom={true}>
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
                 {trips.map(trip => (
-                    <Marker position={trip.tripCoordinates} key={trip._id}>
+                    <Marker position={[]} key={trip._id}>
                         <Popup>
                             {trip.tripDestination}, last visited in {trip.tripReturn}.
                             <Link to={`./trip/${trip._id}`}>View Trip Details</Link>
