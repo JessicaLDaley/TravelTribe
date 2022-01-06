@@ -11,6 +11,7 @@ function Dashboard() {
 
   const {loading, error, data} = useQuery(QUERY_ME);
   const user = data?.me;
+  console.log(user);
 
   return (
     <Flex direction="column">
