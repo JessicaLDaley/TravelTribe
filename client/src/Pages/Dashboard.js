@@ -1,11 +1,10 @@
 import React from "react";
-import TripModal from "../TripForm";
-import UpcomingTrips from "../UpcomingTrips";
-import FriendsList from "../FriendsList";
+import TripModal from "../components/TripForm/TripModal";
+import UpcomingTrips from '../components/UpcomingTrips';
+import FriendsList from "../components/FriendsList";
 import {Flex} from '@chakra-ui/react';
 import {useQuery} from '@apollo/client';
-import {QUERY_ME} from '../../utils/queries';
-import { getCountries } from "../../utils/worldData";
+import {QUERY_ME} from '../utils/queries';
 
 function Dashboard() {
   document.title = 'Dashboard';
@@ -13,11 +12,10 @@ function Dashboard() {
   const {loading, error, data} = useQuery(QUERY_ME);
   const user = data?.me;
   console.log(user);
-  let countries = getCountries();
 
   return (
     <Flex direction="column">
-      <TripModal friends={user?.friends} countries={countries}/>
+      <TripModal friends={user?.friends}/>
       {loading? (
         <div/>
       ) : (

@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
-import Signup from "./components/Pages/Signup";
-import Login from "./components/Pages/Login";
-import Dashboard from "./components/Pages/Dashboard";
-import Landing from "./components/Pages/Landing";
-import Home from "./components/Pages/Home";
-import SingleTrip from "./components/Pages/SingleTrip";
-import Profile from "./components/Pages/Profile";
+import Signup from "./Pages/Signup";
+import Login from "./Pages/Login";
+import Dashboard from "./Pages/Dashboard";
+import Landing from "./Pages/Landing";
+import Home from ".//Pages/Home";
+import SingleTrip from "./Pages/SingleTrip";
+import Profile from "./Pages/Profile";
 
 import {
   ApolloProvider,
