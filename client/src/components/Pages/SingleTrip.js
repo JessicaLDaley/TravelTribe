@@ -17,7 +17,11 @@ const SingleTrip = props => {
 
   return (
     <Flex>
-      {trip.tripName}
+      <p>{trip.tripName}</p>
+      <p>{trip.tripDetails}</p>
+      <p>{trip.tripDestination}</p>
+      <p>{trip.tripDeparture}</p>
+      <p>{trip.tripReturn}</p>
     </Flex>
   )
 }
