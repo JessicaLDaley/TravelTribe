@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import Auth from "../../utils/auth"
 import {
   Box,
   Button,
@@ -10,6 +11,40 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+
+const Signups = (defaultProps) => {
+  if (!Auth.loggedIn()) {
+    return (
+      <>
+      <Link to={"/signup"}>
+      <Button
+        borderRadius="8px"
+        size="md"
+        rounded="md"
+        color={["primary.500", "primary.500", "white", "white"]}
+        bg={["white", "white", "primary.500", "primary.500"]}
+        _hover={{
+          bg: ["primary.100", "primary.100", "primary.400", "primary.400"]
+        }}
+      >
+        {"Create your account now"}
+      </Button>
+    </Link>
+    <Text
+      fontSize="xs"
+      mt={2}
+      textAlign="center"
+      color="primary.800"
+      opacity="0.6"
+    >
+      No credit card required.
+    </Text>
+    </>
+    )} else {
+      return (
+        <></>
+      )}
+}
 
 export default function Home({
   title,
@@ -56,29 +91,7 @@ export default function Home({
         >
           {subtitle}
         </Heading>
-        <Link to={ctaLink}>
-          <Button
-            borderRadius="8px"
-            size="md"
-            rounded="md"
-            color={["primary.500", "primary.500", "white", "white"]}
-            bg={["white", "white", "primary.500", "primary.500"]}
-            _hover={{
-              bg: ["primary.100", "primary.100", "primary.400", "primary.400"]
-            }}
-          >
-            {ctaText}
-          </Button>
-        </Link>
-        <Text
-          fontSize="xs"
-          mt={2}
-          textAlign="center"
-          color="primary.800"
-          opacity="0.6"
-        >
-          No credit card required.
-        </Text>
+        <Signups />
       </Stack>
       <Box w={{ base: "80%", sm: "60%", md: "50%" }} mb={{ base: 12, md: 0 }}>
         {/* TODO: Make this change every X secs */}
