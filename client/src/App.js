@@ -6,6 +6,7 @@ import Login from "./components/Pages/Login";
 import Dashboard from "./components/Pages/Dashboard";
 import Landing from "./components/Pages/Landing";
 import Home from "./components/Pages/Home";
+import SingleTrip from "./components/Pages/SingleTrip";
 
 import {
   ApolloProvider,
@@ -44,6 +45,7 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/trip/:id" component={SingleTrip} />
           <Landing />
         </Switch>
       </Router>
