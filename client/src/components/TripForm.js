@@ -21,16 +21,6 @@ import {
 import { useMutation } from "@apollo/client";
 import { ADD_TRIP } from '../utils/mutations';
 
-// connect this form to the addTrip mutation
-// when the button is pressed the graphql mutation is used
-
-// tripCoordinates
-// tripCompanion {
-// _id
-// username
-// email
-// }
-
 function TripForm({handleChange}){
     return(
         <Flex direction="column">
@@ -73,35 +63,35 @@ function TripModal(){
     const [addTrip] = useMutation(ADD_TRIP);
 
     const handleFormSubmit = async (event) => {
-      event.preventDefault();
+        event.preventDefault();
 
-      try {
-        const { data } = await addTrip({
-          variables: { ...formState }
-        });
-      } catch (e) {
-        console.error(e);
-      }
+        try {
+            const { data } = await addTrip({
+            variables: { ...formState }
+            });
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     const [formState, setFormState] = useState({
-      tripName: '',
-      tripDetails: '',
-      tripDestination: '',
-      tripCoordinates: '',
-      tripDeparture: '',
-      tripReturn: '',
-      tripCompanions: ''
+        tripName: '',
+        tripDetails: '',
+        tripDestination: '',
+        tripCoordinates: '',
+        tripDeparture: '',
+        tripReturn: '',
+        tripCompanions: []
     });
 
     const handleChange = (event) => {
-      const{ name, value } = event.target;
+        const{ name, value } = event.target;
 
-      setFormState({
-        ...formState,
-        [name]: value
-      });
-      console.log(formState);
+        setFormState({
+            ...formState,
+            [name]: value
+        });
+        console.log(formState);
     };
 
     return (
@@ -115,7 +105,7 @@ function TripModal(){
                 <ModalCloseButton />
                 <ModalBody>
                     <TripForm
-                      handleChange={handleChange}
+                        handleChange={handleChange}
                     />
                 </ModalBody>
                 <ModalFooter>
