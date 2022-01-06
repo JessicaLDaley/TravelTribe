@@ -99,6 +99,7 @@ function TripModal(){
             const { data } = await addTrip({
             variables: { ...formState }
             });
+            onClose();
         } catch (e) {
             console.error(e);
         }

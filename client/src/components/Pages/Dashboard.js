@@ -1,10 +1,15 @@
 import React from "react";
 import TripModal from "../TripForm";
+import UpcomingTrips from "../UpcomingTrips";
+import {Flex} from '@chakra-ui/react';
 
 function Dashboard() {
   document.title = 'Dashboard';
   return (
-    <TripModal/>
+    <Flex direction="column">
+      <TripModal/>
+      <UpcomingTrips/>
+    </Flex>
   );
 }
 
