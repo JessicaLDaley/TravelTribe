@@ -18,7 +18,7 @@ function TripForm({handleChange, friends, friendAdd}){
 
             <FriendsMenu friendAdd={friendAdd} friends={friends}/>
 
-            <DestinationMenu/>
+            <DestinationMenu handleChange={handleChange}/>
 
             <Flex pb={1}>
                 <FormControl isRequired={true}>
