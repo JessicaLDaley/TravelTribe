@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import { ADD_TRIP } from '../utils/mutations';
+import {getCountries, getStates, getCities} from '../utils/worldData';
 import {
     Modal,
     ModalOverlay,
@@ -22,13 +23,13 @@ import {
     MenuOptionGroup,
     MenuList,
     MenuItemOption,
-    MenuButton
+    MenuButton,
+    Select
 } from '@chakra-ui/react';
 
 import {QUERY_ME} from '../utils/queries';
 
 function FriendsMenu({friendAdd, friends}){
-
     return(
         <Menu closeOnSelect={false}>
             <MenuButton as={Button} colorScheme='blue' minWidth="100%">
@@ -43,6 +44,28 @@ function FriendsMenu({friendAdd, friends}){
                 </MenuOptionGroup>
             </MenuList>
         </Menu>
+    );
+}
+
+function DestinationMenu(){
+    const [countries, setCountries] = useState([]);
+
+    useEffect(() => {
+        const loadStates = async () => {
+            setCountries(await getCountries());
+        }
+        loadStates();
+    });
+
+    return(
+        <FormControl pb={1}>
+            <FormLabel htmlFor='country'>Trip Destination</FormLabel>
+            <Select id='country' placeholder='Select country'>
+                {countries.map((country, index) => (
+                    <option key={index}>{country}</option>
+                ))}
+            </Select>
+        </FormControl>
     );
 }
 
@@ -68,10 +91,13 @@ function TripForm({handleChange, friends, friendAdd}){
                 friends={friends}/>
             </FormControl>
 
-            <FormControl isRequired={true} pb={1}>
+            {/* <FormControl isRequired={true} pb={1}>
                 <FormLabel htmlFor='tripdest'>Trip Destination</FormLabel>
                 <Input id='tripdest' type='text' name='tripDestination' onChange={handleChange}/>
-            </FormControl>
+                <DestinationMenu/>
+            </FormControl> */}
+
+            <DestinationMenu/>
 
             <Flex pb={1}>
                 <FormControl isRequired={true}>
