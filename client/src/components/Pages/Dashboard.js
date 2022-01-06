@@ -14,12 +14,12 @@ function Dashboard() {
 
   return (
     <Flex direction="column">
-      <TripModal friends={user.friends}/>
+      <TripModal friends={user?.friends}/>
       {loading? (
         <div/>
       ) : (
         <Flex>
-          <UpcomingTrips trips={user.trips}/>
+          <UpcomingTrips trips={user?.trips}/>
           <FriendsList user={user}/>
         </Flex>
       )}
