@@ -32,16 +32,8 @@ function FriendsModal({friends}) {
     )
 }
 
-// obviously not the final styling for this component please be kind, im merely throwing things together in an attempt to bring this application to life
-
 function FriendsList({user}){
     const {friends, username, companionCount} = user;
-    // let shortFriendsList = [];
-    // if(friends.length <= 5){
-    //     shortFriendsList = friends.slice(0, friends.length);
-    // }else{
-    //     shortFriendsList = friends.slice(0, 5);
-    // }
 
     return(
         <Flex>
@@ -52,9 +44,6 @@ function FriendsList({user}){
                     </Tr>
                 </Thead>
                 <Tbody>
-                    {/* loop thru the friends list and display 5 of them on the page */}
-                    {/* ideally we will be able to click these friends and it will bring us to their profile */}
-                    {/* the footer of the table will be a button that will open a modal that scrolls to view all friends */}
                     {friends.length > 0 ? friends.map(friend => (
                         <Tr key={friend._id}>
                             <Td><Link to={`./user/${friend.username}`}>{friend.username}</Link></Td>
