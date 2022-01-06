@@ -2,6 +2,7 @@ import React from "react";
 import {Flex, Table, Thead, Tbody, Tfoot, Th, Tr, Td, Button} from '@chakra-ui/react'
 import {Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton} from '@chakra-ui/react'
 import {useDisclosure} from '@chakra-ui/react';
+import {Link} from 'react-router-dom';
 
 function FriendsModal({friends}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -16,7 +17,7 @@ function FriendsModal({friends}) {
                 <ModalCloseButton />
                 <ModalBody>
                     {friends.map(friend => (
-                        <p key={friend._id}>{friend}</p>
+                        <Link to={`./user/${friend._id}`} key={friend._id}>{friend}</Link>
                     ))}
                 </ModalBody>
     
