@@ -17,7 +17,7 @@ function FriendsModal({friends}) {
                 <ModalCloseButton />
                 <ModalBody>
                     {friends.map(friend => (
-                        <Link to={`./user/${friend._id}`} key={friend._id}>{friend.username}</Link>
+                        <Link to={`./user/${friend.username}`} key={friend._id}>{friend.username}</Link>
                     ))}
                 </ModalBody>
     
