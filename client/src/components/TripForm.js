@@ -27,7 +27,7 @@ import {
 
 import {QUERY_ME} from '../utils/queries';
 
-function FriendsMenu({handleChange, friends}){
+function FriendsMenu({friendAdd, friends}){
 
     return(
         <Menu closeOnSelect={false}>
@@ -38,7 +38,7 @@ function FriendsMenu({handleChange, friends}){
                 <MenuOptionGroup title='Companions' type='checkbox'>
                     {/* map over your friends here and create a menuItemOption for each one */}
                     {friends.map((friend, index) => (
-                        <MenuItemOption value={friend.username} key={index} onClick={handleChange}>{friend.username}</MenuItemOption>
+                        <MenuItemOption value={friend._id} key={index} onBlur={friendAdd}>{friend.username}</MenuItemOption>
                     ))}
                 </MenuOptionGroup>
             </MenuList>
@@ -49,7 +49,7 @@ function FriendsMenu({handleChange, friends}){
 
 // connect this form to the addTrip mutation
 // when the button is pressed the graphql mutation is used
-function TripForm({handleChange, friends}){
+function TripForm({handleChange, friends, friendAdd}){
     return(
         <Flex direction="column">
             <FormControl isRequired={true} pb={1}>
@@ -64,7 +64,7 @@ function TripForm({handleChange, friends}){
 
             <FormControl pb={1}>
                 <FormLabel htmlFor='tripcomp'>Trip Companions</FormLabel>
-                <FriendsMenu handleChange={handleChange}
+                <FriendsMenu friendAdd={friendAdd}
                 friends={friends}/>
             </FormControl>
 
@@ -101,21 +101,39 @@ function TripModal({friends}){
             variables: { ...formState },
             refetchQueries: () => [{query:QUERY_ME}]
             });
+            setFormState(blankState);
             onClose();
         } catch (e) {
             console.error(e);
         }
     }
 
-    const [formState, setFormState] = useState({
-        tripName: '',
-        tripDetails: '',
-        tripDestination: '',
-        tripCoordinates: '',
-        tripDeparture: '',
-        tripReturn: '',
-        tripCompanions: []
-    });
+    const blankState = {
+      tripName: '',
+      tripDetails: '',
+      tripDestination: '',
+      tripCoordinates: '',
+      tripDeparture: '',
+      tripReturn: '',
+      tripCompanions: []
+  }
+
+    const [formState, setFormState] = useState(blankState);
+
+    const friendAdd = (event) => {
+      const checkedFriends = document.querySelectorAll('[role="menuitemcheckbox"]');
+      let friendsToAdd = [];
+      checkedFriends.forEach(element => {
+        if (element.ariaChecked === "true") {
+          friendsToAdd.push(element.value);
+        }
+      });
+      setFormState({
+        ...formState,
+        tripCompanions: friendsToAdd
+      });
+      console.log(formState);
+    }
 
     const handleChange = (event) => {
         const{ name, value } = event.target;
@@ -139,6 +157,7 @@ function TripModal({friends}){
                 <ModalBody>
                     <TripForm friends={friends}
                         handleChange={handleChange}
+                        friendAdd={friendAdd}
                     />
                 </ModalBody>
                 <ModalFooter>
