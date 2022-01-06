@@ -58,7 +58,7 @@ function FriendsList({user}){
                     {/* the footer of the table will be a button that will open a modal that scrolls to view all friends */}
                     {friends.length > 0 ? friends.map(friend => (
                         <Tr key={friend._id}>
-                            <Td>{friend.username}</Td>
+                            <Td><Link to={`./user/${friend.username}`}>{friend.username}</Link></Td>
                         </Tr>
                     )) : <Text textAlign="center">😔 sad 😔</Text>}
                 </Tbody>
