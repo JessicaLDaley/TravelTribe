@@ -1,10 +1,18 @@
 import React from "react";
 import {Flex} from '@chakra-ui/react';
 
-function UpcomingTrips(){
+function UpcomingTrips({trips}){
     return(
-        <Flex>
-            this is where im going to display your upcoming trips!
+        <Flex display="column">
+            {trips.map(trip => (
+                <div key={trip._id}>
+                    <p>{trip.tripName}</p>
+                    <p>{trip.tripDetails}</p>
+                    <p>{trip.tripDestination}</p>
+                    <p>{trip.tripDeparture}</p>
+                    <p>{trip.tripReturn}</p>
+                </div>
+            ))}
         </Flex>
     );
 }

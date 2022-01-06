@@ -15,7 +15,7 @@ export const QUERY_USER = gql`
         tripCoordinates
       }
       companionCount
-      companions {
+      friends {
         _id
         username
       }
@@ -30,7 +30,7 @@ export const QUERY_ME = gql`
       username
       email
       companionCount
-      companions {
+      friends {
         _id
         username
         email
@@ -54,20 +54,6 @@ export const QUERY_ME = gql`
         tripComments {
           _id
           commentText
-          username
-          createdAt
-        }
-        placesCount
-        placesToSee {
-          _id
-          tripName
-          username
-          createdAt
-        }
-        pictureCount
-        pictureAlbum {
-          pictureId
-          tripName
           username
           createdAt
         }

@@ -57,9 +57,9 @@ const tripSchema = new Schema(
   }
 )
 
-tripSchema.virtual('commentCount').get(function() {
-  return this.tripComments.length;
-})
+// tripSchema.virtual('commentCount').get(function() {
+//   return this.tripComments.length;
+// })
 
 tripSchema.virtual('companionCount').get(function() {
   return this.tripCompanions.length;
