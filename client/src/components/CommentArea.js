@@ -9,7 +9,7 @@ const CommentArea = ({comments}) => {
       {comments.map(comment => (
           <p className='comments' key={comment._id}>
             <b>{comment.commentText}</b>
-            By <Link to={`./user/${comment.username}`}>{comment.username}</Link> on {comment.createdAt}
+            By <Link to={`/user/${comment.username}`}>{comment.username}</Link> on {comment.createdAt}
           </p>
         ))}      
     </Flex>
