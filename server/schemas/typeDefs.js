@@ -62,6 +62,7 @@ type Query {
 type Mutation {
   login(email: String!, password: String!): Auth
   addUser(username: String!, email: String!, password: String!): Auth
+  addFriend(friendUsername: String!): User
   addTrip(tripName: String!, tripDetails: String!, tripDestination: String, tripCoordinates: String, tripDeparture: String, tripReturn: String, tripCompanions: [String]): Trip
   addCompanion(tripId: ID!, username: String!): Trip
   addComment(tripId: ID!, commentText: String!, username: String!): Trip 

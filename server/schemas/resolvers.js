@@ -124,8 +124,21 @@ const resolvers = {
       }
 
       throw new AuthenticationError('You need to be logged in!')
+    },
+    addFriend: async (parent, { friendUsername }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { friends: friendUsername } },
+          { new: true }
+        ).populate('friends');
+    
+        return updatedUser;
+      }
+    
+      throw new AuthenticationError('You need to be logged in!');
     }
-  },
+  },  
 }
 
 module.exports = resolvers
