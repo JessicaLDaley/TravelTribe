@@ -65,7 +65,6 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
 };
 
 const MenuLinks = ({ isOpen }) => {
-  console.log(Auth.loggedIn());
   return (
     <Box
       display={{ base: isOpen ? "block" : "none", md: "block" }}
