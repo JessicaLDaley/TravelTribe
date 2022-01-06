@@ -4,7 +4,7 @@ import { Flex, Table, Thead, Tbody, Tr, Th, Td, Box, Badge } from "@chakra-ui/re
 
 function UpcomingTrips({ trips }) {
     return (
-        <Box maxW='lg' borderWidth='2px' borderRadius='lg'>
+        <Box maxW='lg' borderWidth='2px' borderRadius='lg' maxHeight="75vh" overflowY="scroll">
             {trips.map((trip) => (
                 <Box p='6'>
                     <Box display='flex'>

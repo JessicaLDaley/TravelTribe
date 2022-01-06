@@ -36,7 +36,7 @@ function FriendsList({ user }) {
     const { friends, username, companionCount } = user;
 
     return (
-        <Table justify-content="center" variant="striped">
+        <Table justify-content="center" variant="striped" maxHeight="75vh">
             <Thead>
                 <Tr>
                     <Th background="primary.400" border="outset" height="2rem" fontSize="sm" color="white" text-align="right">{username}'s Tribe ({companionCount})</Th>

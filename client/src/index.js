@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 import customTheme from "./utils/theme";
-import Auth from "./utils/auth";
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 
