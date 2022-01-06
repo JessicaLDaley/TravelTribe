@@ -25,6 +25,8 @@ import {
     MenuButton
 } from '@chakra-ui/react';
 
+import {QUERY_ME} from '../utils/queries';
+
 // fake friends data until we connect to graphql and pull the users friends
 const friends = ['mike', 'jim', 'jack', 'john', 'joe', 'larry', 'paul', 'peter'];
 
@@ -97,7 +99,8 @@ function TripModal(){
 
         try {
             const { data } = await addTrip({
-            variables: { ...formState }
+            variables: { ...formState },
+            refetchQueries: () => [{query:QUERY_ME}]
             });
             onClose();
         } catch (e) {
