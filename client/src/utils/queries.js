@@ -78,3 +78,30 @@ export const QUERY_TRIP_DASH = gql`
   }
 `
 
+export const QUERY_TRIP = gql`
+  query trip($id: ID!) {
+    trip(_id: $id) {
+      _id
+      tripName
+      tripDetails
+      tripDestination
+      tripCoordinates
+      tripDeparture
+      tripReturn
+      companionCount
+      tripCompanions {
+        _id
+        username
+        email
+      }
+      commentCount
+      tripComments {
+        _id
+        commentText
+        username
+        createdAt
+      }
+    }
+  }
+`
+
