@@ -15,6 +15,7 @@ TBD
 - React
 - Chakra UI
 - React-Leaflet/Leaflet
+- OpenWeatherApi
 - Heroku
 - MongoDB Atlas
 
