@@ -58,12 +58,24 @@ function DestinationMenu(){
     });
 
     return(
-        <FormControl pb={1}>
+        <FormControl pb={1} isRequired>
             <FormLabel htmlFor='country'>Trip Destination</FormLabel>
-            <Select id='country' placeholder='Select country'>
+            <Select id='country' placeholder='Select country' pb={1}>
                 {countries.map((country, index) => (
                     <option key={index}>{country}</option>
                 ))}
+            </Select>
+
+            <Select id='state' placeholder='Select state' pb={1}>
+                {/* {countries.map((country, index) => (
+                    <option key={index}>{country}</option>
+                ))} */}
+            </Select>
+
+            <Select id='city' placeholder='Select city' pb={1}>
+                {/* {countries.map((country, index) => (
+                    <option key={index}>{country}</option>
+                ))} */}
             </Select>
         </FormControl>
     );
