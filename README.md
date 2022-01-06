@@ -1,4 +1,4 @@
-# travel-app
+# TravelTribe
 
 # Description
 TBD
