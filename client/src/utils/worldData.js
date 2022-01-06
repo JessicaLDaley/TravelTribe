@@ -1,40 +1,35 @@
 const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJxbWl0Z2Jra3JhaHZxd2VlenBAbnZocncuY29tIiwiYXBpX3Rva2VuIjoiZkIybENmdFVYMFNlbGtJOTVCOXh5NDFRc2hWTS1LUjdVdnZ5Z2dlc1ZGdnc1SzgtREpXczdMQ2cxby1jLTFlakxDRSJ9LCJleHAiOjE2NDE1NjU4NjF9.79cTKC5y_YMA2mfYXnE4Q4FR_pDsMTqE7zI45KyyPmA";
 
 export async function getCountries(){
-    let response = await fetch("https://www.universal-tutorial.com/api/countries/", {
-        headers: {
-            "Authorization": `Bearer ${API_KEY}`
-        }
-    });
-    
-    let data = await response.json();
+    let url = "https://www.universal-tutorial.com/api/countries/";
+    let data = await query(url);
     let countries = data.map(d => d.country_name);
-
     return countries;
 }
 
 export async function getStates(country){
-    let response = await fetch(`https://www.universal-tutorial.com/api/states/${country}`, {
-        headers: {
-            "Authorization": `Bearer ${API_KEY}`
-        }
-    });
-    
-    let data = await response.json();
+    let url = `https://www.universal-tutorial.com/api/states/${country}`;
+    let data = await query(url);
     let states = data.map(d => d.state_name);
     return states;
 }
 
 export async function getCities(state){
-    let response = await fetch(`https://www.universal-tutorial.com/api/cities/${state}`, {
+    let url = `https://www.universal-tutorial.com/api/cities/${state}`;
+    let data = await query(url);
+    let cities = data.map(d => d.city_name);
+    return cities;
+}
+
+async function query(url){
+    let response = await fetch(url, {
         headers: {
             "Authorization": `Bearer ${API_KEY}`
         }
     });
     
     let data = await response.json();
-    let cities = data.map(d => d.city_name);
-    return cities;
+    return data;
 }
 
 
