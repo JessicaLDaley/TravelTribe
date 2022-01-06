@@ -18,12 +18,13 @@ function UpcomingTrips({ trips }) {
            {trips.map(trip => (
                 <div key={trip._id}>
             <Tr>
-                <Th>Trip Name</Th>
-                <Th>Trip Details</Th>
-                <Th>Trip Destination</Th>
-                <Th>Trip Departure</Th>
-                <Th>Trip Return</Th>
-                <Th>Trip Companions</Th>
+          
+                <Th fontSize="sm">Trip Name</Th>
+                <Th fontSize="sm">Trip Details</Th>
+                <Th fontSize="sm">Trip Destination</Th>
+                <Th fontSize="sm">Trip Departure</Th>
+                <Th fontSize="sm">Trip Return</Th>
+                <Th fontSize="sm">Trip Companions</Th>
                 
             </Tr>
          
