@@ -6,7 +6,8 @@ TBD
 # Live Desployment
 [Deployment](https://traveltribe.herokuapp.com/)
 
-![Screenshot](./screenshots/screenshot.png)
+![tripSS](https://user-images.githubusercontent.com/79805880/148480516-c169a734-6af9-46b6-8582-93c9bf73ee90.png)
+
 
 # Built With
 - MongoDB
