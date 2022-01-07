@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Table, Thead, Tbody, Tfoot, Th, Tr, Td, Button } from '@chakra-ui/react'
+import { Flex, Table, Thead, Tbody, Tfoot, Th, Tr, Td, Button, Box } from '@chakra-ui/react'
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton } from '@chakra-ui/react'
 import { useDisclosure, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
@@ -39,7 +39,7 @@ function FriendsList({ user }) {
         <Table justify-content="center" variant="striped" maxHeight="75vh">
             <Thead>
                 <Tr>
-                    <Th background="primary.400" border="outset" height="2rem" fontSize="sm" color="white" text-align="right">{username}'s Tribe ({companionCount})</Th>
+                    <Th background="primary.400" borderTopRadius="md" height="2rem" fontSize="sm" color="white" text-align="right">{username}'s Tribe ({companionCount})</Th>
                 </Tr>
             </Thead>
             <Tbody>
