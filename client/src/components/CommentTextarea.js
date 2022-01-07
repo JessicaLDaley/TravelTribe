@@ -34,7 +34,7 @@ const CommentTextarea = ({ tripId }) => {
   return (
     <Flex direction='column'>
       <FormControl onSubmit={handleFormSubmit}>
-        <Text>Character Count: {characterCount}/280</Text>
+        <Text fontSize='sm'>Character Count: {characterCount}/280</Text>
         <Textarea
           placeholder="Enter your message here..."
           value={commentText}
