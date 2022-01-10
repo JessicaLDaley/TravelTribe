@@ -1,6 +1,8 @@
 import React from "react";
 import Auth from "../utils/auth.js";
 import { NavLink } from "react-router-dom";
+import LoginModal from "./LoginModal.js";
+import SignupModal from "./SignupModal.js";
 
 function Nav() {
   function showNav() {
@@ -19,10 +21,10 @@ function Nav() {
       return (
         <ul>
           <li>
-            <NavLink to="/login">Login</NavLink>
+            <LoginModal/>
           </li>
           <li>
-            <NavLink to="/signup">Signup</NavLink>
+            <SignupModal/>
           </li>
         </ul>
       );
