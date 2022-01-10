@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Auth from "../utils/auth"
+import { SignupModalHome } from '../components/SignupModal';
 import {
   Box,
   Button,
@@ -10,27 +10,13 @@ import {
   Heading,
   Stack,
   Text,
-  ModalBody,
 } from "@chakra-ui/react";
 
 const Signups = (defaultProps) => {
   if (!Auth.loggedIn()) {
     return (
       <>
-        <Link to={"/signup"}>
-          <Button
-            borderRadius="8px"
-            size="md"
-            rounded="md"
-            color={["primary.500", "primary.500", "white", "white"]}
-            bg={["white", "white", "primary.500", "primary.500"]}
-            _hover={{
-              bg: ["primary.100", "primary.100", "primary.400", "primary.400"]
-            }}
-          >
-            {"Create your account now"}
-          </Button>
-        </Link>
+        <SignupModalHome />
         <Text
           fontSize="xs"
           mt={2}

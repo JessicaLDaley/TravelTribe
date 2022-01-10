@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Auth from "../utils/auth";
-import { Button, Flex, Heading, Input, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody  } from '@chakra-ui/react';
+import { Button, Flex, Heading, Input, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody } from '@chakra-ui/react';
 import { ADD_USER } from '../utils/mutations';
 import { useMutation } from "@apollo/client";
 
@@ -59,6 +59,34 @@ function SignupModal() {
                 _hover={{
                     bg: ["primary.100", "primary.100", "primary.400", "primary.400"]
                 }}>Create Account
+            </Button>
+
+            <Modal isOpen={isOpen} onClose={onClose} isCentered>
+                <ModalOverlay />
+                <ModalContent background="primary.500">
+                    <ModalCloseButton color="white" />
+                    <ModalBody>
+                        <Signup />
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
+        </>
+    )
+}
+
+export function SignupModalHome() {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    return (
+        <>
+            <Button onClick={onOpen} borderRadius="8px"
+                size="md"
+                rounded="md"
+                color={["primary.500", "primary.500", "white", "white"]}
+                bg={["white", "white", "primary.500", "primary.500"]}
+                _hover={{
+                    bg: ["primary.100", "primary.100", "primary.400", "primary.400"]
+                }}
+            >Create your account now
             </Button>
 
             <Modal isOpen={isOpen} onClose={onClose} isCentered>
