@@ -42,7 +42,7 @@ function FriendsList({ user }) {
                     <Th background="primary.400" borderTopRadius="md" height="2rem" fontSize="sm" color="white" textAlign="center">{username}'s Tribe ({companionCount})</Th>
                 </Tr>
             </Thead>
-            <Tbody>
+            <Tbody >
                 {friends.length > 0 ? friends.map(friend => (
                     <Tr key={friend._id}>
                         <Td textAlign="center"><Link to={`/user/${friend.username}`}>{friend.username}</Link></Td>

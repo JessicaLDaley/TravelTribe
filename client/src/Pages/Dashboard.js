@@ -14,7 +14,7 @@ function Dashboard() {
   const user = data?.me;
 
   return (
-    <Flex direction={["column", "column", "row"]} paddingX={3} maxWidth="100vw">
+    <Flex direction={["column", "column", "row"]} paddingX={3} maxWidth="100vw" maxHeight="75vh">
       <Flex width={["100%", "100%", "20%"]}>
         {loading ? (
           <div />

@@ -20,7 +20,7 @@ export default function ProfileMap({trips}){
                                 <br/>
                                 Last visited: {trip.tripReturn}.
                             </p>
-                            <Link to={`./trip/${trip._id}`}>View Trip Details</Link>
+                            <Link to={`/trip/${trip._id}`}>View Trip Details</Link>
                         </Popup>
                     </Marker>
                 ))}
