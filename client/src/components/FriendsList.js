@@ -51,7 +51,7 @@ function FriendsList({ user }) {
             </Tbody>
             {/* only display the button to access the friends modal if the user has more than 5 friends */}
             {companionCount > 5 ? (
-                <Tfoot>
+                <Tfoot justifyContent="center">
                     <Tr>
                         <Th>
                             <FriendsModal friends={friends} />
