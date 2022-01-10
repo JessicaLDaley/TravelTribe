@@ -5,11 +5,9 @@ import logoTrip from "./images/logo.jpg";
 // Navbar Logo image
 function Logo(props) {
     return (
-
         <Box {...props}>
             <Image boxSize='6rem' objectFit='contain' borderRadius='100%' src={logoTrip} className='logo' alt='logo' />
         </Box>
-
     );
 }
 
