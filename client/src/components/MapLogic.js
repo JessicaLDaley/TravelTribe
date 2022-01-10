@@ -7,14 +7,19 @@ import {Flex} from '@chakra-ui/react';
 // this is the map that we will use on the users profile
 // profile map will display a history of the users trips
 export default function ProfileMap({trips}){
+    console.log(trips);
     return(
         <Flex width="100vw" height="25vh" justifyContent="center" m="0 auto">
             <MapContainer center={[50, 0]} zoom={2} scrollWheelZoom={true}>
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
-                {trips.map(trip => (
-                    <Marker position={[]} key={trip._id}>
+                {trips.map((trip, index) => (
+                    <Marker position={[index, index*20]} key={trip._id}>
                         <Popup>
-                            {trip.tripDestination}, last visited in {trip.tripReturn}.
+                            <p>
+                                {trip.tripDestination}
+                                <br/>
+                                Last visited: {trip.tripReturn}.
+                            </p>
                             <Link to={`./trip/${trip._id}`}>View Trip Details</Link>
                         </Popup>
                     </Marker>

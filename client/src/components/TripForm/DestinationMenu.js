@@ -4,7 +4,7 @@ import {
     FormLabel,
     Select
 } from '@chakra-ui/react';
-import {getCountries, getStates, getCities} from '../../utils/worldData';
+import {getCountries, getStates, getCities, getApiKey} from '../../utils/worldData';
 
 function DestinationMenu({handleChange}){
     const [countries, setCountries] = useState([]);
