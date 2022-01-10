@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Dashboard from "./Pages/Dashboard";
 import Landing from "./Pages/Landing";
 import Home from ".//Pages/Home";
@@ -46,6 +47,7 @@ function App() {
           <Route exact path="/user/:username" component={Profile}/>
           <Landing />
         </Switch>
+        {/* <Footer/> */}
       </Router>
     </ApolloProvider>
   );

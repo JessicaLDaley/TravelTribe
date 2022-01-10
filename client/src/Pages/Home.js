@@ -4,7 +4,6 @@ import Auth from "../utils/auth"
 import { SignupModalHome } from '../components/SignupModal';
 import {
   Box,
-  Button,
   Flex,
   Image,
   Heading,

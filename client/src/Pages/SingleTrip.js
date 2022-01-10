@@ -34,7 +34,7 @@ const SingleTrip = (props) => {
         {trip.tripName}
       </Badge>
       <Text>Details: {trip.tripDetails}</Text>
-     <Text>Destination: {trip.tripDestination}</Text>
+      <Text>Destination: {trip.tripDestination}</Text>
       <Text>Departure: {trip.tripDeparture}</Text>
       <Text>Return: {trip.tripReturn}</Text>
       <b>----- Communication Box -----</b>
