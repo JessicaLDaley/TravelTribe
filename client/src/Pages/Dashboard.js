@@ -15,18 +15,18 @@ function Dashboard() {
 
   return (
     <Flex direction={["column", "column", "row"]} paddingX={3} maxWidth="100vw" maxHeight="75vh">
-      <Flex width={["100%", "100%", "20%"]}>
+      <Flex width={["100%", "100%", "20%"]} maxHeight={["25vh", "25vh", "75vh"]} order={[1, 1, 0, 0]}>
         {loading ? (
           <div />
         ) : (
           <UpcomingTrips trips={user?.trips} />
         )}
       </Flex>
-      <Flex direction="column" width={["100%", "100%", "60%"]} paddingX={[0, 0, 3]} display={['none', 'none', 'flex']}>
+      <Flex direction="column" width={["100%", "100%", "60%"]} paddingX={[0, 0, 3]} order={[0, 0, 1, 1]}>
         <TripModal friends={user?.friends} />
-        <Timeline />
+        <Timeline/>
       </Flex>
-      <Flex width={["100%", "100%", "20%"]} display={['none', 'none', 'flex']}>
+      <Flex width={["100%", "100%", "20%"]} display={['none', 'none', 'flex']} order={[2, 2, 2, 2]}>
         {loading ? (
           <div />
         ) : (

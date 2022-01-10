@@ -3,7 +3,7 @@ import { Box, Text } from '@chakra-ui/react';
 
 function Timeline() {
     return (
-        <Box borderWidth='2px' borderRadius='lg' maxHeight="70vh" overflowY="scroll" padding="5">
+        <Box borderWidth='2px' borderRadius='lg' maxHeight="70vh" overflowY="scroll" padding="5" display={['none', 'none', 'flex']}>
             <Text>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae tempus quam pellentesque nec nam aliquam sem et. Vulputate mi sit amet mauris commodo quis imperdiet massa. Sed ullamcorper morbi tincidunt ornare massa eget egestas. Ac auctor augue mauris augue neque. Tempus egestas sed sed risus pretium quam vulputate. Aenean et tortor at risus viverra adipiscing. Vulputate ut pharetra sit amet. Pellentesque dignissim enim sit amet. Tellus cras adipiscing enim eu turpis egestas.
 
