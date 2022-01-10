@@ -4,6 +4,7 @@ import { Flex, Box, Badge, Text, Divider } from "@chakra-ui/react";
 
 function UpcomingTrips({ trips }) {
     return (
+        // i need to fix the backgroundcolor to be dynamic with the light/dark but if you're looking at this and its light theme use gray.100 for backgroundColor
         <Flex direction="column" overflowY="scroll" minWidth="100%" backgroundColor="gray.700" borderRadius="lg">
             <Box background="primary.400" borderTopRadius="md" py="2" fontSize="sm" color="white" textAlign="center" textTransform="uppercase" fontWeight="bold">Upcoming Trips</Box>
             {trips.map(trip => (
@@ -14,6 +15,7 @@ function UpcomingTrips({ trips }) {
                         to={`./trip/${trip._id}`}
                         minWidth="90%"
                         rounded="md"
+                        fontSize='md'
                         my="2"
                         py="1"
                         _hover={{ bg: ["primary.100", "primary.100", "primary.400", "primary.400"] }}>
