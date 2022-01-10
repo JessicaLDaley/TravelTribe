@@ -39,13 +39,13 @@ function FriendsList({ user }) {
         <Table justify-content="center" variant="striped" maxHeight="75vh">
             <Thead>
                 <Tr>
-                    <Th background="primary.400" borderTopRadius="md" height="2rem" fontSize="sm" color="white" text-align="right">{username}'s Tribe ({companionCount})</Th>
+                    <Th background="primary.400" borderTopRadius="md" height="2rem" fontSize="sm" color="white" textAlign="center">{username}'s Tribe ({companionCount})</Th>
                 </Tr>
             </Thead>
             <Tbody>
                 {friends.length > 0 ? friends.map(friend => (
                     <Tr key={friend._id}>
-                        <Td><Link to={`/user/${friend.username}`}>{friend.username}</Link></Td>
+                        <Td textAlign="center"><Link to={`/user/${friend.username}`}>{friend.username}</Link></Td>
                     </Tr>
                 )) : <Text >😔 sad 😔</Text>}
             </Tbody>

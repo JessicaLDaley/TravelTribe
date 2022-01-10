@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Flex, Table, Thead, Tbody, Tr, Th, Td, Box, Badge } from "@chakra-ui/react";
+import { Box, Badge } from "@chakra-ui/react";
 
 function UpcomingTrips({ trips }) {
     return (

@@ -2,7 +2,8 @@ import React from "react";
 import TripModal from "../components/TripForm/TripModal";
 import UpcomingTrips from '../components/UpcomingTrips';
 import FriendsList from "../components/FriendsList";
-import { Flex } from '@chakra-ui/react';
+import Timeline from '../components/Timeline';
+import { SimpleGrid, GridItem } from '@chakra-ui/react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 
@@ -13,21 +14,26 @@ function Dashboard() {
   const user = data?.me;
 
   return (
-    <Flex direction="column">
-      <TripModal friends={user?.friends}/>
-      {loading ? (
-        <div />
-      ) : (
-        <Flex justifyContent="space-between">
-          <Flex ml={4}>
-            <UpcomingTrips trips={user?.trips} />
-          </Flex>
-          <Flex mr={4}>
-            <FriendsList user={user} />
-          </Flex>
-        </Flex>
-      )}
-    </Flex>
+    <SimpleGrid columns={[1, 5, 5, 5]} spacing={3} paddingX={3}>
+      <GridItem colSpan={1} colStart={1}>
+        {loading ? (
+          <div />
+        ) : (
+          <UpcomingTrips trips={user?.trips} />
+        )}
+      </GridItem>
+      <GridItem colSpan={3} colStart={2}>
+        <TripModal friends={user?.friends} />
+        <Timeline/>
+      </GridItem>
+      <GridItem colSpan={1} colStart={5}>
+        {loading ? (
+          <div />
+        ) : (
+          <FriendsList user={user} />
+        )}
+      </GridItem>
+    </SimpleGrid>
   );
 }
 
