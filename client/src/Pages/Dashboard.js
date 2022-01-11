@@ -8,7 +8,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 
 function Dashboard() {
-  document.title = 'Dashboard';
+  document.title = 'Dashboard | TravelTribe';
 
   const { loading, error, data } = useQuery(QUERY_ME);
   const user = data?.me;

@@ -10,7 +10,7 @@ import { ADD_FRIEND } from "../utils/mutations";
 function Profile() {
   // pull the username from the params
   const username = useParams().username;
-  document.title = `${username} | Profile`;
+  document.title = `${username} | TravelTribe Profile`;
 
   // get the user data from the database
   const { loading, error, data } = useQuery(QUERY_USER, {

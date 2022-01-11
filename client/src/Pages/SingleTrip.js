@@ -13,7 +13,7 @@ const SingleTrip = (props) => {
   const { loading, data } = useQuery(QUERY_TRIP, { variables: { id: tripId } });
 
   const trip = data?.trip || {};
-  document.title = `${trip.tripName} | Trip`;
+  document.title = `${trip.tripName} | TravelTribe Trip`;
 
   if (loading) {
     return <div> Loading ... </div>;

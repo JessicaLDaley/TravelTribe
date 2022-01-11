@@ -42,7 +42,7 @@ export default function Home({
   ctaText,
   ...rest
 }) {
-  document.title = 'Home';
+  document.title = 'Home | TravelTribe';
   return (
     <Flex
       align="center"
