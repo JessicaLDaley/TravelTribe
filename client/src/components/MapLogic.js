@@ -7,7 +7,6 @@ import {Flex} from '@chakra-ui/react';
 // this is the map that we will use on the users profile
 // profile map will display a history of the users trips
 export default function ProfileMap({trips}){
-    console.log(trips);
     return(
         <Flex width="100vw" height="25vh" justifyContent="center" m="0 auto">
             <MapContainer center={[50, 0]} zoom={2} scrollWheelZoom={true}>
