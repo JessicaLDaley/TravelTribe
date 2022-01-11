@@ -19,7 +19,7 @@ export function getStates(countryCode){
 export function getCities(countryCode, stateCode){
     let cities = City.getCitiesOfState(countryCode, stateCode);
     cities = cities.map(city => {
-        return {"name": city.name, "coordinates": [+(city.longitude), +(city.latitude)]};
+        return {"name": city.name, "coordinates": [+(city.latitude), +(city.longitude)]};
     });
     return cities;
 }
