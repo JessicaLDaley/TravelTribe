@@ -8,7 +8,7 @@ function UpcomingTrips({ trips }) {
         <Flex direction="column" overflowY="scroll" minWidth="100%" backgroundColor="gray.100" borderRadius="lg">
             <Box background="primary.400" borderTopRadius="md" py="2" fontSize="sm" color="white" textAlign="center" textTransform="uppercase" fontWeight="bold">Upcoming Trips</Box>
             {trips.map(trip => (
-                <Box px="1" textAlign="center">
+                <Box px="1" textAlign="center" key={trip._id}>
                     <Badge
                         textAlign="center"
                         as={Link}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Table, Thead, Tbody, Tfoot, Th, Tr, Td, Button, Box } from '@chakra-ui/react'
+import { Table, Thead, Tbody, Tfoot, Th, Tr, Td, Button } from '@chakra-ui/react'
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton } from '@chakra-ui/react'
 import { useDisclosure, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
@@ -42,12 +42,16 @@ function FriendsList({ user }) {
                     <Th background="primary.400" borderTopRadius="md" height="2rem" fontSize="sm" color="white" textAlign="center">{username}'s Tribe ({companionCount})</Th>
                 </Tr>
             </Thead>
-            <Tbody >
+            <Tbody>
                 {friends.length > 0 ? friends.map(friend => (
                     <Tr key={friend._id}>
-                        <Td textAlign="center"><Link to={`/user/${friend.username}`}>{friend.username}</Link></Td>
+                        <Td textAlign="center">
+                            <Link to={`/user/${friend.username}`}>{friend.username}</Link>
+                        </Td>
                     </Tr>
-                )) : <Text >😔 sad 😔</Text>}
+                )) : <Tr>
+                        <Td>😔 sad 😔</Td>
+                    </Tr>}
             </Tbody>
             {/* only display the button to access the friends modal if the user has more than 5 friends */}
             {companionCount > 5 ? (
