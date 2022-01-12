@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileMap from "../components/MapLogic";
+import ProfileMap from "../components/UserProfile/MapLogic";
 import FriendsList from "../components/FriendsList";
 import { Flex, Button } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
