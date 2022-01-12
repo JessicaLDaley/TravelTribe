@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import Auth from "../utils/auth";
 
 import Logo from "./Logo";
+import LoginModal from "./LoginModal";
+import SignupModal from "./SignupModal";
 // Hamburger menu navbar
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -88,19 +90,9 @@ const LoggedInLinks = () => {
   if (!Auth.loggedIn()) {
     return (
       <>
-        <MenuItem to="/Login">Login</MenuItem>
-        <MenuItem to="/Signup" isLast>
-          <Button
-            size="sm"
-            rounded="md"
-            color={["primary.500", "primary.500", "white", "white"]}
-            bg={["white", "white", "primary.500", "primary.500"]}
-            _hover={{
-              bg: ["primary.100", "primary.100", "primary.400", "primary.400"]
-            }}
-          >Create Account
-          </Button>
-        </MenuItem>
+        {/* <MenuItem to="/Login">Login</MenuItem> */}
+        <LoginModal/>
+        <SignupModal/>
       </>
     )
   } else {
@@ -132,7 +124,7 @@ const NavBarContainer = ({ children, ...props }) => {
       justify="space-between"
       wrap="wrap"
       w="100%"
-      mb={8}
+      mb={4}
       p={8}
       bg={["primary.400", "primary.400", "transparent", "transparent"]}
       color={["primary.100", "primary.100", "primary.500", "primary.500"]}

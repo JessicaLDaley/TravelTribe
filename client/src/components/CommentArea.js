@@ -1,18 +1,22 @@
-import React from 'react'
-import {Flex} from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { SimpleGrid, Box, Flex } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
-
-const CommentArea = ({comments}) => {  
+const CommentArea = ({ comments }) => {
   return (
-    <Flex direction="column">
-      {comments.map(comment => (
-          <p className='comments' key={comment._id}>
+    <SimpleGrid columns="1" spacing="10">
+      {comments.map((comment) => (
+        <Flex className="comments" key={comment._id} direction='column'>
+          <Box>
             <b>{comment.commentText}</b>
-            By <Link to={`/user/${comment.username}`}>{comment.username}</Link> on {comment.createdAt}
-          </p>
-        ))}      
-    </Flex>
-  )
-}
+          </Box>
+          <Box>
+            By <Link to={`/user/${comment.username}`}>{comment.username}</Link>{" "}
+            on {comment.createdAt}
+          </Box>
+        </Flex>
+      ))}
+    </SimpleGrid>
+  );
+};
 export default CommentArea;

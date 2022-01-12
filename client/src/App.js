@@ -1,8 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
-import Signup from "./Pages/Signup";
-import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
 import Landing from "./Pages/Landing";
 import Home from ".//Pages/Home";
@@ -43,8 +41,6 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/login" component={Login} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/trip/:id" component={SingleTrip} />
           <Route exact path="/user/:username" component={Profile}/>

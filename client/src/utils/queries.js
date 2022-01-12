@@ -13,6 +13,8 @@ export const QUERY_USER = gql`
         tripName
         tripDestination
         tripCoordinates
+        tripDeparture
+        tripReturn
       }
       companionCount
       friends {

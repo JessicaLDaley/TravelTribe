@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Auth from "../utils/auth"
+import { SignupModalHome } from '../components/SignupModal';
 import {
   Box,
   Button,
@@ -16,34 +16,23 @@ const Signups = (defaultProps) => {
   if (!Auth.loggedIn()) {
     return (
       <>
-      <Link to={"/signup"}>
-      <Button
-        borderRadius="8px"
-        size="md"
-        rounded="md"
-        color={["primary.500", "primary.500", "white", "white"]}
-        bg={["white", "white", "primary.500", "primary.500"]}
-        _hover={{
-          bg: ["primary.100", "primary.100", "primary.400", "primary.400"]
-        }}
-      >
-        {"Create your account now"}
-      </Button>
-    </Link>
-    <Text
-      fontSize="xs"
-      mt={2}
-      textAlign="center"
-      color="primary.800"
-      opacity="0.6"
-    >
-      No credit card required.
-    </Text>
-    </>
-    )} else {
-      return (
-        <></>
-      )}
+        <SignupModalHome />
+        <Text
+          fontSize="xs"
+          mt={2}
+          textAlign="center"
+          color="primary.800"
+          opacity="0.6"
+        >
+          No credit card required.
+        </Text>
+      </>
+    )
+  } else {
+    return (
+      <></>
+    )
+  }
 }
 
 export default function Home({
@@ -111,7 +100,7 @@ Home.propTypes = {
 
 Home.defaultProps = {
   title: "Travel Tribe",
-  subtitle:"Organizing a travel group is sometimes challenging. Careful planning and open communication are the keys to success. Travel Tribe is an exclusive social media application that allows group members to meet, share ideas, and ultimately take the stress out of organizing. Post schedule updates, meeting locations and share photos to commemorate your travels. Wherever the journey takes you, Travel Tribe has your back. Bon voyage!",
+  subtitle: "Organizing a travel group is sometimes challenging. Careful planning and open communication are the keys to success. Travel Tribe is an exclusive social media application that allows group members to meet, share ideas, and ultimately take the stress out of organizing. Post schedule updates, meeting locations and share photos to commemorate your travels. Wherever the journey takes you, Travel Tribe has your back. Bon voyage!",
   image: "https://source.unsplash.com/collection/959652/800x600",
   ctaText: "Create your account now",
   ctaLink: "/signup"
