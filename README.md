@@ -5,7 +5,7 @@ Organizing a travel group is sometimes challenging. Careful planning and open co
 
 User Story: As a traveler looking to connect my travel companions, I want the ability to add a trip and link my friends to the trip. I want to be able to include a description, place, departure and arrival dates, so everyone knows what to expect. I want myself and my group to be able to communicate any necessary information within a communication section specific to our trip. 
 
-# Live Desployment
+# Live Deployment
 [Deployment Link](https://traveltribe.herokuapp.com/)
 
 ![tripSS](https://user-images.githubusercontent.com/79805880/148480516-c169a734-6af9-46b6-8582-93c9bf73ee90.png)
