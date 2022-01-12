@@ -20,11 +20,9 @@ const tripSchema = new Schema(
       type: String,
       required: 'Where are we going?',
     },
-    tripCoordinates: [
-      { 
-        type: Number 
-      },
-    ],
+    tripCoordinates: { 
+      type: Array
+    },
     tripComments: [commentSchema],
     tripCompanions: [
       {

@@ -11,8 +11,8 @@ export default function ProfileMap({trips}){
         <Flex width="100vw" height="25vh" justifyContent="center" m="0 auto">
             <MapContainer center={[50, 0]} zoom={2} scrollWheelZoom={true}>
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
-                {trips.map((trip, index) => (
-                    <Marker position={[index, index*20]} key={trip._id}>
+                {trips.map(trip => (
+                    <Marker position={trip.tripCoordinates} key={trip._id}>
                         <Popup>
                             <p>
                                 {trip.tripDestination}

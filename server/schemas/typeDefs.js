@@ -17,7 +17,7 @@ type Trip {
   tripName: String
   tripDetails: String
   tripDestination: String
-  tripCoordinates: [Int]
+  tripCoordinates: [Float]
   commentCount: Int
   tripComments: [Comment]
   companionCount: Int
@@ -63,7 +63,7 @@ type Mutation {
   login(email: String!, password: String!): Auth
   addUser(username: String!, email: String!, password: String!): Auth
   addFriend(friendId: ID!): User
-  addTrip(tripName: String!, tripDetails: String!, tripDestination: String, tripCoordinates: [Int], tripCompanions: [ID], tripDeparture: String, tripReturn: String): Trip
+  addTrip(tripName: String!, tripDetails: String!, tripDestination: String, tripCoordinates: [Float], tripCompanions: [ID], tripDeparture: String, tripReturn: String): Trip
   addCompanion(tripId: ID!, username: String!): Trip
   addComment(tripId: ID!, commentText: String!): Trip 
   addPlaces(tripId: ID!, placeName: String!, placeType: String!): Trip
