@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Flex, Text, Textarea, FormControl, Button } from '@chakra-ui/react';
 import { useMutation } from "@apollo/client";
-import {ADD_COMMENT} from '../utils/mutations';
+import {ADD_COMMENT} from '../../utils/mutations';
 
 const CommentTextarea = ({ tripId }) => {
   const [commentText, setBody] = useState('');

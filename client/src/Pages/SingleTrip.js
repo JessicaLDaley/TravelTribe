@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_TRIP } from "../utils/queries";
 import { Flex, Badge, Text } from "@chakra-ui/react";
-import CommentArea from "../components/CommentArea";
-import CommentTextarea from "../components/CommentTextarea";
+import CommentArea from "../components/SingleTrip/CommentArea";
+import CommentTextarea from "../components/SingleTrip/CommentTextarea";
 import Timeline from "../components/Timeline";
 
 const SingleTrip = (props) => {
