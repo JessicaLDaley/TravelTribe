@@ -21,7 +21,7 @@ const SingleTrip = (props) => {
   }
 
   return (
-    <Flex direction={["column", "column", "row"]} paddingX={3} maxWidth="100vw" maxHeight="75vh">
+    <Flex direction={["column", "column", "row"]} paddingX={3} maxWidth="100vw" maxHeight="70vh">
       <TripDetails trip={trip}/>
       <Flex direction="column" width={["100%", "100%", "60%"]} paddingX={[0, 0, 3]} order={[0, 0, 1, 1]}>
         {/* this timeline is going to contain pictures and stuff from the trip */}

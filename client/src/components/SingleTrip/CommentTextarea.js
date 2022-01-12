@@ -34,13 +34,14 @@ const CommentTextarea = ({ tripId }) => {
   return (
     <Flex direction='column'>
       <FormControl onSubmit={handleFormSubmit}>
-        <Text fontSize='sm'>Character Count: {characterCount}/280</Text>
+        <Text fontSize='sm' fontWeight="light">Character Count: {characterCount}/280</Text>
         <Textarea
           placeholder="Enter your message here..."
           value={commentText}
-          onChange={handleChange}
-          size='md' />
-        <Button type='submit' onClick={handleFormSubmit}>Send message</Button>
+          onChange={handleChange} 
+          mb="3"
+          />
+        <Button type='submit' onClick={handleFormSubmit} width="100%">Send message</Button>
       </FormControl>
     </Flex>
   )
