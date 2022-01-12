@@ -59,18 +59,15 @@ function TripModal({friends}){
             ...formState,
             tripCompanions: friendsToAdd
         });
-        console.log(formState);
     }
 
     const handleChange = (event) => {
-        console.log(event);
         const { name, value } = event.target;
 
         setFormState({
             ...formState,
             [name]: value
         });
-        console.log(formState);
     };
 
     return (
