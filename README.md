@@ -14,13 +14,13 @@ User Story: As a traveler looking to connect my travel companions, I want the ab
 # Built With
 - MongoDB
 - Express
-- Node.js
 - React
-- [Chakra UI](https://chakra-ui.com/)
-- [React-Leaflet/Leaflet](https://react-leaflet.js.org/)
-- [Country-City-State](https://www.npmjs.com/package/country-state-city)
+- Node.js
 - Heroku
 - MongoDB Atlas
+- [Chakra UI](https://chakra-ui.com/)
+- [React-Leaflet/Leaflet](https://react-leaflet.js.org/)
+- [Country-State-City](https://www.npmjs.com/package/country-state-city)
 
 # Contributors
 - [Steve](https://github.com/SteveB29/)
